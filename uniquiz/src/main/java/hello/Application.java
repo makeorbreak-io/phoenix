@@ -1,12 +1,16 @@
 package hello;
 
 import java.util.Arrays;
+import java.util.List;
 
+import model.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import repositories.UserRepository;
+import services.UserService;
 
 @SpringBootApplication
 public class Application {
@@ -27,6 +31,13 @@ public class Application {
                 System.out.println(beanName);
             }
 
+
+           /* Uncomment for testing
+            UserService service = new UserService();
+            service.createUser("test","LEL","test","test");
+
+            System.out.println(new UserRepository().findOne("test").get().getPassword());
+            */
         };
     }
 

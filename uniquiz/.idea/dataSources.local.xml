@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="uniquiz.h2" uuid="6f74451c-f02f-4acf-8272-1122b43f3875">
+      <database-info product="H2" version="1.4.192 (2016-05-26)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.192 (2016-05-26)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <introspection-schemas>UNIQUIZ:*</introspection-schemas>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,93 @@
+package model;
+
+import org.eclipse.persistence.jpa.jpql.parser.DateTime;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Entity
+public class Solution implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long pk;
+
+    @Version
+    private Long version;
+
+    private Long quizPk;
+
+    private String username;
+    private byte rightAnswers;
+    private byte wrongAnswers;
+    private LocalDateTime solvedOn;
+
+    public Solution() {
+    }
+
+    public Long getPk() {
+        return pk;
+    }
+
+    public void setPk(Long pk) {
+        this.pk = pk;
+    }
+
+    public Long getQuizPk() {
+        return quizPk;
+    }
+
+    public void setQuizPk(Long quizPk) {
+        this.quizPk = quizPk;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public byte getRightAnswers() {
+        return rightAnswers;
+    }
+
+    public void setRightAnswers(byte rightAnswers) {
+        this.rightAnswers = rightAnswers;
+    }
+
+    public byte getWrongAnswers() {
+        return wrongAnswers;
+    }
+
+    public void setWrongAnswers(byte wrongAnswers) {
+        this.wrongAnswers = wrongAnswers;
+    }
+
+    public LocalDateTime getSolvedOn() {
+        return solvedOn;
+    }
+
+    public void setSolvedOn(LocalDateTime solvedOn) {
+        this.solvedOn = solvedOn;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Solution solution = (Solution) o;
+
+        return pk != null ? pk.equals(solution.pk) : solution.pk == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return pk != null ? pk.hashCode() : 0;
+    }
+}
