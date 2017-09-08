@@ -93,6 +93,6 @@ public class Solution implements Serializable {
     }
 
     public SolutionDTO toDTO(){
-        return new SolutionDTO(this.pk, this.quizPk, this.username, this.rightAnswers, this.wrongAnswers, this.solvedOn);
+        return new SolutionDTO(this.pk, this.quizPk, this.username, this.rightAnswers, this.wrongAnswers);
     }
 }

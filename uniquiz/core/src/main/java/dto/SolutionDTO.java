@@ -12,16 +12,14 @@ public class SolutionDTO {
     private String username;
     private byte rightAnswers;
     private byte wrongAnswers;
-    private LocalDateTime solvedOn;
 
     public SolutionDTO(Long pk, Long quizPk, String username,
-                        byte rightAnswers, byte wrongAnswers, LocalDateTime solvedOn){
+                        byte rightAnswers, byte wrongAnswers){
         this.setPk(pk);
         this.setQuizPk(quizPk);
         this.setUsername(username);
         this.setRightAnswers(rightAnswers);
         this.setWrongAnswers(wrongAnswers);
-        this.setSolvedOn(solvedOn);
     }
 
     public Long getPk() {
@@ -62,13 +60,5 @@ public class SolutionDTO {
 
     public void setWrongAnswers(byte wrongAnswers) {
         this.wrongAnswers = wrongAnswers;
-    }
-
-    public LocalDateTime getSolvedOn() {
-        return solvedOn;
-    }
-
-    public void setSolvedOn(LocalDateTime solvedOn) {
-        this.solvedOn = solvedOn;
     }
 }

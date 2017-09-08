@@ -1,8 +1,6 @@
 package model;
 
 import dto.UserDTO;
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
