@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/explore_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:text="Explore"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"/>
+
+        <LinearLayout
+            android:id="@+id/fields_card"
+            android:layout_below="@id/explore_title"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="8dp"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="Fields"
+                android:textStyle="bold"
+                android:textSize="30sp"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fields_cards_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subjects_card"
+            android:layout_below="@id/fields_card"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="8dp"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:text="Subjects"
+                android:textStyle="bold"
+                android:textSize="30sp"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/subjects_cards_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4" />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/quizs_title"
+            android:layout_below="@id/subjects_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="Popular Quizs"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/most_viewed_quiz_list"
+            android:layout_below="@id/quizs_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"/>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
