@@ -118,6 +118,6 @@ public class Quiz implements Serializable {
         for(Question q : this.questions){
             questions.add(q.toDTO());
         }
-        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.coursePk, this.title);
+        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.coursePk, this.title, popularityCounter);
     }
 }
