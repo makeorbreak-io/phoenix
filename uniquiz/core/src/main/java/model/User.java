@@ -103,6 +103,11 @@ public class User implements Serializable {
     }
 
     public UserDTO toDTO(){
-        return new UserDTO(username, password, name, email);
+        Set<String> set = new HashSet<>();
+        for(Roles role : roles){
+            set.add(role.name());
+        }
+
+        return new UserDTO(username, password, name, email, set);
     }
 }
