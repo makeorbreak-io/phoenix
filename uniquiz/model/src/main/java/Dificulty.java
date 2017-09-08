@@ -1,5 +1,8 @@
 /**
  * Created by fabiolourenco on 08/09/17.
  */
-public class Dificulty {
+public enum Dificulty {
+    EASY,
+    NORMAL,
+    HARD
 }
