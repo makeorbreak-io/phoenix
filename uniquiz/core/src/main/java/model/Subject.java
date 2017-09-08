@@ -1,5 +1,7 @@
 package model;
 
+import dto.SubjectDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -52,5 +54,9 @@ public class Subject implements Serializable {
     @Override
     public int hashCode() {
         return pk != null ? pk.hashCode() : 0;
+    }
+
+    public SubjectDTO toDTO(){
+        return new SubjectDTO(this.pk, this.subjectName);
     }
 }

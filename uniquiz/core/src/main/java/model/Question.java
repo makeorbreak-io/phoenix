@@ -1,5 +1,8 @@
 package model;
 
+import dto.AnswerDTO;
+import dto.QuestionDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.LinkedList;
@@ -67,5 +70,13 @@ public class Question implements Serializable {
     @Override
     public int hashCode() {
         return pk != null ? pk.hashCode() : 0;
+    }
+
+    public QuestionDTO toDTO(){
+        List<AnswerDTO> answers = new LinkedList<>();
+        for(Answer a : this.answers){
+            answers.add(a.toDTO());
+        }
+        return new QuestionDTO(this.pk, this.question, answers);
     }
 }

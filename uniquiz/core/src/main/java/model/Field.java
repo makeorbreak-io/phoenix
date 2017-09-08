@@ -1,5 +1,7 @@
 package model;
 
+import dto.FieldDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -52,5 +54,9 @@ public class Field implements Serializable {
     @Override
     public int hashCode() {
         return fieldName != null ? fieldName.hashCode() : 0;
+    }
+
+    public FieldDTO toDTO(){
+        return new FieldDTO(this.pk, this.fieldName);
     }
 }

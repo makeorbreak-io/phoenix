@@ -1,5 +1,7 @@
 package model;
 
+import dto.AnswerDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -63,5 +65,7 @@ public class Answer implements Serializable {
         return pk != null ? pk.hashCode() : 0;
     }
 
-
+    public AnswerDTO toDTO(){
+        return new AnswerDTO(this.pk, this.answer, this.rightAnswer);
+    }
 }

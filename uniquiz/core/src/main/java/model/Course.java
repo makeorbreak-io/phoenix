@@ -1,5 +1,7 @@
 package model;
 
+import dto.CourseDTO;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -72,4 +74,7 @@ public class Course implements Serializable {
         return courseName != null ? courseName.hashCode() : 0;
     }
 
+    public CourseDTO toDTO(){
+        return new CourseDTO(this.pk, this.courseName, this.fieldName, this.fieldPk);
+    }
 }

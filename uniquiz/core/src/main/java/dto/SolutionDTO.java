@@ -1,32 +1,27 @@
-package model;
+package dto;
 
-import dto.SolutionDTO;
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
-
-import javax.persistence.*;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Entity
-public class Solution implements Serializable {
+/**
+ * Created by Rafael Santos on 08-09-2017.
+ */
+public class SolutionDTO {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long pk;
-
-    @Version
-    private Long version;
-
     private Long quizPk;
-
     private String username;
     private byte rightAnswers;
     private byte wrongAnswers;
     private LocalDateTime solvedOn;
 
-    public Solution() {
+    public SolutionDTO(Long pk, Long quizPk, String username,
+                        byte rightAnswers, byte wrongAnswers, LocalDateTime solvedOn){
+        this.setPk(pk);
+        this.setQuizPk(quizPk);
+        this.setUsername(username);
+        this.setRightAnswers(rightAnswers);
+        this.setWrongAnswers(wrongAnswers);
+        this.setSolvedOn(solvedOn);
     }
 
     public Long getPk() {
@@ -75,24 +70,5 @@ public class Solution implements Serializable {
 
     public void setSolvedOn(LocalDateTime solvedOn) {
         this.solvedOn = solvedOn;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Solution solution = (Solution) o;
-
-        return pk != null ? pk.equals(solution.pk) : solution.pk == null;
-    }
-
-    @Override
-    public int hashCode() {
-        return pk != null ? pk.hashCode() : 0;
-    }
-
-    public SolutionDTO toDTO(){
-        return new SolutionDTO(this.pk, this.quizPk, this.username, this.rightAnswers, this.wrongAnswers, this.solvedOn);
     }
 }
