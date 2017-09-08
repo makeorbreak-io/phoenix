@@ -32,6 +32,8 @@ public class Quiz implements Serializable {
 
     private String title;
 
+    private long popularityCounter;
+
     public Quiz() {
         questions = new LinkedList<>();
     }
@@ -82,6 +84,18 @@ public class Quiz implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public long getPopularityCounter() {
+        return popularityCounter;
+    }
+
+    public void setPopularityCounter(long popularityCounter) {
+        this.popularityCounter = popularityCounter;
     }
 
     @Override
