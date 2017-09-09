@@ -1,14 +1,13 @@
 package model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by fabiolourenco on 09/09/17.
  */
-public class UserStatistics {
+@Entity
+public class UserStatistics implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id

@@ -125,6 +125,6 @@ public class User implements Serializable {
             set.add(role.name());
         }
 
-        return new UserDTO(username, password, name, email, set);
+        return new UserDTO(username, password, name, email, set, userStatistics);
     }
 }
