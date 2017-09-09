@@ -21,7 +21,7 @@ public class Solution implements Serializable {
 
     private Long quizPk;
 
-    private String username;
+    private String email;
     private byte rightAnswers;
     private byte wrongAnswers;
     private LocalDateTime solvedOn;
@@ -45,12 +45,12 @@ public class Solution implements Serializable {
         this.quizPk = quizPk;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public byte getRightAnswers() {
@@ -93,6 +93,6 @@ public class Solution implements Serializable {
     }
 
     public SolutionDTO toDTO(){
-        return new SolutionDTO(this.pk, this.quizPk, this.username, this.rightAnswers, this.wrongAnswers);
+        return new SolutionDTO(this.pk, this.quizPk, this.email, this.rightAnswers, this.wrongAnswers);
     }
 }

@@ -1,7 +1,9 @@
 package hello;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import model.User;
 import org.springframework.boot.CommandLineRunner;
@@ -19,7 +21,12 @@ import services.UserService;
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication application = new SpringApplication(Application.class);
+        Map<String, Object> map = new HashMap<>();
+        map.put("SERVER_CONTEXT_PATH", "/uniquiz");
+        application.setDefaultProperties(map);
+        application.run(args);
+
     }
 
     @Bean
