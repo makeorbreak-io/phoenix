@@ -10,6 +10,7 @@
         <class>model.Solution</class>
         <class>model.Subject</class>
         <class>model.User</class>
+        <class>model.UserStatistics</class>
 
         <class>util.LocalDateTimeConverter</class>
 

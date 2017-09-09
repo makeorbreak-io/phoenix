@@ -1,7 +1,5 @@
-package dto;
+package phoenix.uniquizandroid.dto;
 
-import model.User;
-import model.UserStatistics;
 
 import java.util.Set;
 
@@ -15,20 +13,19 @@ public class UserDTO {
     private String name;
     private String email;
     private Set<String> roles;
-    private UserStatistics userStatistics;
 
+    public UserDTO(){
+
+    }
     public UserDTO(String username, String password,
-                   String name, String email, Set<String> roles, UserStatistics userStatistics){
+                   String name, String email, Set<String> roles){
         this.setUsername(username);
         this.setPassword(password);
         this.setName(name);
         this.setEmail(email);
         this.setRoles(roles);
-        this.setUserStatistics(userStatistics);
     }
 
-    public UserDTO() {
-    }
 
     public String getUsername() {
         return username;
@@ -70,11 +67,8 @@ public class UserDTO {
         this.roles = roles;
     }
 
-    public UserStatistics getUserStatistics() {
-        return userStatistics;
+    public String credentials(){
+        return getUsername() + ":" + password;
     }
 
-    public void setUserStatistics(UserStatistics userStatistics) {
-        this.userStatistics = userStatistics;
-    }
 }

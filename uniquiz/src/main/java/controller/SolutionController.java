@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import repositories.SolutionRepository;
+import services.StatisticsService;
 
 import javax.persistence.NoResultException;
 import java.time.LocalDateTime;
@@ -76,6 +77,8 @@ public class SolutionController {
             solution.setSolvedOn(LocalDateTime.now());
 
             solution = repo.save(solution);
+
+            StatisticsService.recalculateUserStatistics(solution);
 
             return new ResponseEntity<>(solution.toDTO(), HttpStatus.CREATED);
 
