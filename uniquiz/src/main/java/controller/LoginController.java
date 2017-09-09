@@ -20,11 +20,11 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<UserDTO> sendRequest(@RequestBody UserRequest userRequest) {
         try {
-            return new ResponseEntity<UserDTO>(
+            return new ResponseEntity<>(
                     new UserRepository().findByUsernameAndPassword(userRequest.getUsername(), userRequest.getPassword()).toDTO(),
                     HttpStatus.OK);
         } catch (Exception e){
-            return new ResponseEntity<UserDTO>(HttpStatus.UNAUTHORIZED);
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
     }
 

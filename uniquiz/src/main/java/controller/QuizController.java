@@ -48,6 +48,24 @@ public class QuizController {
         }
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/quiz")
+    public ResponseEntity<List<QuizDTO>> findByTitle(@RequestParam("title") String title) {
+        try {
+            QuizRepository repo = new QuizRepository();
+
+            List<QuizDTO> quizzes = new LinkedList<>();
+            for(Quiz quiz : repo.findByTitle(title)){
+                quizzes.add(quiz.toDTO());
+            }
+
+            return new ResponseEntity<>(quizzes, HttpStatus.OK);
+        }catch (NoResultException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }catch (NoSuchElementException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<QuizDTO> add(@RequestBody Quiz quiz) {
         try {

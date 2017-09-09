@@ -49,6 +49,22 @@ public class SolutionController {
         }
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/latest")
+    public ResponseEntity<SolutionDTO> findOne(@RequestParam("quiz") Long quiz,
+                                                @RequestParam("email") String email) {
+        try {
+            SolutionRepository repo = new SolutionRepository();
+
+            SolutionDTO solution = repo.findLatestByQuizAndEmail(quiz, email).toDTO();
+
+            return new ResponseEntity<>(solution, HttpStatus.OK);
+        }catch (NoResultException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }catch (NoSuchElementException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<SolutionDTO> add(@RequestBody Solution solution) {
         try {
