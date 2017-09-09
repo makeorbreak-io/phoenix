@@ -9,10 +9,10 @@ import repositories.UserRepository;
  * Created by fabiolourenco on 09/09/17.
  */
 public class StatisticsService {
-    public static void recalculateUserStatistics(Solution solution){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+    public void recalculateUserStatistics(Solution solution){
+        //new Thread(new Runnable() {
+          //  @Override
+          //  public void run() {
                 UserRepository userRepository = new UserRepository();
                 User user = userRepository.findOne(solution.getEmail()).get();
 
@@ -23,6 +23,6 @@ public class StatisticsService {
 
                 userRepository.save(user);
             }
-        }).start();
+        //}).start();
     }
-}
+

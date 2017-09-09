@@ -6,16 +6,9 @@ import java.io.Serializable;
 /**
  * Created by fabiolourenco on 09/09/17.
  */
-@Entity
+@Embeddable
 public class UserStatistics implements Serializable{
     private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long pk;
-
-    @Version
-    private Long version;
 
     private long totalRightAnswers;
     private long totalWrongAnswers;
@@ -62,14 +55,6 @@ public class UserStatistics implements Serializable{
 
     public void setTotalQuizzesPassed(long totalQuizzesPassed) {
         this.totalQuizzesPassed = totalQuizzesPassed;
-    }
-
-    public Long getPk() {
-        return pk;
-    }
-
-    public void setPk(Long pk) {
-        this.pk = pk;
     }
 
     public void addWrongAnswers(long value){

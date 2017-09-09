@@ -78,7 +78,7 @@ public class SolutionController {
 
             solution = repo.save(solution);
 
-            StatisticsService.recalculateUserStatistics(solution);
+            new StatisticsService().recalculateUserStatistics(solution);
 
             return new ResponseEntity<>(solution.toDTO(), HttpStatus.CREATED);
 
