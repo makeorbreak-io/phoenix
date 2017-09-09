@@ -8,5 +8,11 @@
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <introspection-schemas>UNIQUIZ:*</introspection-schemas>
     </data-source>
+    <data-source name="jdbc:h2:tcp://95.85.48.40:9092/~/test" uuid="099ff1b6-8ab2-41c2-80d8-5c55116d2fc7">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
   </component>
 </project>

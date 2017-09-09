@@ -1,26 +1,23 @@
 package dto;
 
-import java.util.List;
-
 /**
  * Created by Rafael Santos on 08-09-2017.
  */
-public class QuizDTO {
+public class SimplifiedQuizDTO {
 
     private Long pk;
-    private List<QuestionDTO> questions;
     private String difficulty;
     private Long subjectPk;
     private String subjectName;
     private Long coursePk;
     private String title;
 
-    public QuizDTO(Long pk, List<QuestionDTO> questions, String difficulty,
-                    Long subjectPk, Long coursePk, String title){
+    public SimplifiedQuizDTO(Long pk, String difficulty, Long subjectPk,
+                            String subjectName, Long coursePk, String title){
         this.setPk(pk);
-        this.setQuestions(questions);
         this.setDifficulty(difficulty);
         this.setSubjectPk(subjectPk);
+        this.setSubjectName(subjectName);
         this.setCoursePk(coursePk);
         this.setTitle(title);
     }
@@ -31,14 +28,6 @@ public class QuizDTO {
 
     public void setPk(Long pk) {
         this.pk = pk;
-    }
-
-    public List<QuestionDTO> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<QuestionDTO> questions) {
-        this.questions = questions;
     }
 
     public String getDifficulty() {
@@ -57,6 +46,14 @@ public class QuizDTO {
         this.subjectPk = subjectPk;
     }
 
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
     public Long getCoursePk() {
         return coursePk;
     }
@@ -71,13 +68,5 @@ public class QuizDTO {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getSubjectName(){
-        return subjectName;
-    }
-
-    public void setSubjectName(String subjectName){
-        this.subjectName = subjectName;
     }
 }

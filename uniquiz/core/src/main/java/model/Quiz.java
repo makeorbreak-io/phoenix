@@ -27,6 +27,7 @@ public class Quiz implements Serializable {
     private Difficulty difficulty;
 
     private Long subjectPk;
+    private String subjectName;
 
     private Long coursePk;
 
@@ -82,6 +83,14 @@ public class Quiz implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSubjectName(){
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName){
+        this.subjectName = subjectName;
     }
 
     @Override
