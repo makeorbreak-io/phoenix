@@ -2,6 +2,7 @@ package model;
 
 import dto.SolutionDTO;
 import org.eclipse.persistence.jpa.jpql.parser.DateTime;
+import util.LocalDateTimeConverter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -24,6 +25,8 @@ public class Solution implements Serializable {
     private String email;
     private byte rightAnswers;
     private byte wrongAnswers;
+
+    @Convert(converter = LocalDateTimeConverter.class)
     private LocalDateTime solvedOn;
 
     public Solution() {

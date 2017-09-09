@@ -11,6 +11,8 @@
         <class>model.Subject</class>
         <class>model.User</class>
 
+        <class>util.LocalDateTimeConverter</class>
+
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:.\db\uniquiz;MV_STORE=FALSE;AUTO_SERVER=TRUE"/>
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://s-bitcommit.dei.isep.ipp.pt:22/~/test;MV_STORE=FALSE"/> -->
@@ -22,7 +24,6 @@
             <property name="eclipselink.logging.level.sql" value="FINE"/>
             <property name="eclipselink.logging.parameters" value="true"/>
         </properties>
-
 
     </persistence-unit>
 </persistence>
