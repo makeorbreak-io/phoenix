@@ -2,6 +2,7 @@ package repositories;
 
 import model.Solution;
 
+import javax.persistence.NoResultException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ public class SolutionRepository extends BaseRepository<Solution, Long> {
         m.put("a", quizPk);
         m.put("b", email);
         List<Solution> solutionList = match("e.quizPk=:a AND e.email=:b", m);
+
+        if(solutionList.isEmpty()) throw new NoResultException();
 
         Solution latestSolution = solutionList.get(0);
 
