@@ -26,6 +26,11 @@ public class Answer implements Serializable {
     public Answer() {
     }
 
+    public Answer(String answer, boolean rightAnswer) {
+        this.answer = answer;
+        this.rightAnswer = rightAnswer;
+    }
+
     public Long getPk() {
         return pk;
     }

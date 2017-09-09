@@ -27,8 +27,10 @@ public class Quiz implements Serializable {
     private Difficulty difficulty;
 
     private Long subjectPk;
+    private String subjectName;
 
     private Long coursePk;
+    private String courseName;
 
     private String title;
 
@@ -38,20 +40,22 @@ public class Quiz implements Serializable {
         questions = new LinkedList<>();
     }
 
+    public Quiz(Difficulty difficulty, Long subjectPk, String subjectName, Long coursePk, String courseName, String title) {
+        this.difficulty = difficulty;
+        this.subjectPk = subjectPk;
+        this.subjectName = subjectName;
+        this.coursePk = coursePk;
+        this.courseName = courseName;
+        this.title = title;
+        this.questions = new LinkedList<>();
+    }
+
     public Long getPk() {
         return pk;
     }
 
     public void setPk(Long pk) {
         this.pk = pk;
-    }
-
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(LinkedList<Question> questions) {
-        this.questions = questions;
     }
 
     public Difficulty getDifficulty() {
@@ -86,6 +90,14 @@ public class Quiz implements Serializable {
         this.title = title;
     }
 
+    public String getSubjectName(){
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
@@ -96,6 +108,18 @@ public class Quiz implements Serializable {
 
     public void setPopularityCounter(long popularityCounter) {
         this.popularityCounter = popularityCounter;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     @Override
@@ -118,6 +142,6 @@ public class Quiz implements Serializable {
         for(Question q : this.questions){
             questions.add(q.toDTO());
         }
-        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.coursePk, this.title, popularityCounter);
+        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.subjectName, this.coursePk, this.courseName, this.title, popularityCounter);
     }
 }

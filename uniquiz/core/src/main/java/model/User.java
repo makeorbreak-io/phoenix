@@ -1,12 +1,11 @@
 package model;
 
 import dto.UserDTO;
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -25,17 +24,22 @@ public class User implements Serializable {
     @Version
     private Long version;
 
+    @Column(unique = true)
     private String username;
     private String password;
     private String name;
+
     @Id
     private String email;
 
     private Set<Roles> roles;
 
+    private UserStatistics userStatistics;
+
     public User() {
         this.roles = new HashSet<>();
         this.roles.add(Roles.STUDENT);
+        this.userStatistics = new UserStatistics();
     }
 
     public User(String username, String password, String name, String email){
@@ -45,6 +49,7 @@ public class User implements Serializable {
         this.email = email;
         this.roles = new HashSet<>();
         this.roles.add(Roles.STUDENT);
+        this.userStatistics = new UserStatistics();
     }
 
     public String getUsername() {
@@ -76,6 +81,10 @@ public class User implements Serializable {
     }
 
     public void setEmail(String email) {
+        final Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
+        if (!matcher.find()) {
+            throw new IllegalStateException("Invalid E-mail");
+        }
         this.email = email;
     }
 
@@ -85,6 +94,14 @@ public class User implements Serializable {
 
     public void setRoles(Set<Roles> roles) {
         this.roles = roles;
+    }
+
+    public UserStatistics getUserStatistics() {
+        return userStatistics;
+    }
+
+    public void setUserStatistics(UserStatistics userStatistics) {
+        this.userStatistics = userStatistics;
     }
 
     @Override
@@ -108,6 +125,6 @@ public class User implements Serializable {
             set.add(role.name());
         }
 
-        return new UserDTO(username, password, name, email, set);
+        return new UserDTO(username, password, name, email, set, userStatistics);
     }
 }

@@ -1,7 +1,9 @@
 package hello;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import model.User;
 import org.springframework.boot.CommandLineRunner;
@@ -9,14 +11,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.RequestMapping;
 import repositories.UserRepository;
 import services.UserService;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "controller")
 public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication application = new SpringApplication(Application.class);
+        Map<String, Object> map = new HashMap<>();
+        map.put("SERVER_CONTEXT_PATH", "/uniquiz");
+        application.setDefaultProperties(map);
+        application.run(args);
+
     }
 
     @Bean

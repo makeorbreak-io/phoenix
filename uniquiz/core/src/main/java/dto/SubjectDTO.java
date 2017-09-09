@@ -17,6 +17,9 @@ public class SubjectDTO {
         return pk;
     }
 
+    public SubjectDTO() {
+    }
+
     public void setPk(Long pk) {
         this.pk = pk;
     }

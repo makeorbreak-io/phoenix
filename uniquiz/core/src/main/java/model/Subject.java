@@ -25,6 +25,10 @@ public class Subject implements Serializable {
     public Subject() {
     }
 
+    public Subject(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
     public Long getPk() {
         return pk;
     }

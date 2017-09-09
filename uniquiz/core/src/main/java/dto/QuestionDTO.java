@@ -17,6 +17,9 @@ public class QuestionDTO {
         this.setAnswers(answers);
     }
 
+    public QuestionDTO() {
+    }
+
     public Long getPk() {
         return pk;
     }

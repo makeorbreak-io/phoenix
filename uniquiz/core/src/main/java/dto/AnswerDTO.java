@@ -15,6 +15,9 @@ public class AnswerDTO {
         this.setRightAnswer(rightAnswer);
     }
 
+    public AnswerDTO() {
+    }
+
     public Long getPk() {
         return pk;
     }
