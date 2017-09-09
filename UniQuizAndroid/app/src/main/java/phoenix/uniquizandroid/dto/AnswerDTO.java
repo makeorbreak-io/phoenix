@@ -18,6 +18,9 @@ public class AnswerDTO implements Serializable{
         this.setRightAnswer(rightAnswer);
     }
 
+    public AnswerDTO() {
+    }
+
     public Long getPk() {
         return pk;
     }

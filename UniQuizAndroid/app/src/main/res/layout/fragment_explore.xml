@@ -91,6 +91,7 @@
             android:id="@+id/most_viewed_quiz_list"
             android:layout_below="@id/quizs_title"
             android:layout_width="match_parent"
+            android:layout_margin="6dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"/>
     </RelativeLayout>

@@ -13,6 +13,10 @@ public class SubjectDTO {
         this.setSubjectName(subjectName);
     }
 
+    public SubjectDTO(){
+
+    }
+
     public Long getPk() {
         return pk;
     }

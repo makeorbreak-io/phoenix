@@ -22,6 +22,9 @@ public class SimplifiedQuizDTO {
         this.setTitle(title);
     }
 
+    public SimplifiedQuizDTO() {
+    }
+
     public Long getPk() {
         return pk;
     }

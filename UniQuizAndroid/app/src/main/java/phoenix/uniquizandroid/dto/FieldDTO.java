@@ -13,6 +13,9 @@ public class FieldDTO {
         this.setPk(pk);
         this.setFieldName(fieldName);
     }
+    public FieldDTO(){
+
+    }
 
     public Long getPk() {
         return pk;
