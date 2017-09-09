@@ -77,7 +77,7 @@ public class QuizDTO {
     public void setTitle(String title) {
         this.title = title;
     }
-    
+
     public String getSubjectName(){
         return subjectName;
     }

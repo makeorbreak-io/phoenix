@@ -12,14 +12,12 @@
         <class>model.User</class>
 
         <properties>
-            <!-- <property name="javax.persistence.jdbc.url" value="jdbc:h2:.\db\uniquiz;MV_STORE=FALSE;AUTO_SERVER=TRUE"/> -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://95.85.48.40/~/test;MV_STORE=FALSE"/>
-            <!-- <property name="javax.persistence.jdbc.password" value=""/> -->
-            <property name="javax.persistence.jdbc.password" value="71dcfc1adef694e4bc9018e1cc"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:.\db\uniquiz;MV_STORE=FALSE;AUTO_SERVER=TRUE"/>
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://s-bitcommit.dei.isep.ipp.pt:22/~/test;MV_STORE=FALSE"/> -->
+            <property name="javax.persistence.jdbc.password" value=""/>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <!-- <property name="javax.persistence.jdbc.user" value="sa"/> -->
-            <!-- <property name="javax.persistence.jdbc.user" value=""/> -->
-            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.user" value=""/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="eclipselink.logging.level.sql" value="FINE"/>
             <property name="eclipselink.logging.parameters" value="true"/>
