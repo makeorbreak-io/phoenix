@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -23,9 +24,11 @@ public class User implements Serializable {
     @Version
     private Long version;
 
+    @Column(unique = true)
     private String username;
     private String password;
     private String name;
+
     @Id
     private String email;
 
@@ -74,6 +77,10 @@ public class User implements Serializable {
     }
 
     public void setEmail(String email) {
+        final Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(email);
+        if (!matcher.find()) {
+            throw new IllegalStateException("Invalid E-mail");
+        }
         this.email = email;
     }
 
