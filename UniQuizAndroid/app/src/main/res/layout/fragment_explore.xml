@@ -17,8 +17,9 @@
             android:gravity="center_vertical"
             android:text="Explore"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"/>
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:elevation="5dp"/>
 
         <LinearLayout
             android:id="@+id/fields_card"
@@ -38,7 +39,7 @@
                 android:gravity="center_vertical"
                 android:text="Fields"
                 android:textStyle="bold"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/fields_cards_view"
                 android:layout_width="match_parent"
@@ -65,7 +66,7 @@
                 android:gravity="center_vertical"
                 android:text="Subjects"
                 android:textStyle="bold"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/subjects_cards_view"
                 android:layout_width="match_parent"
@@ -82,7 +83,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:text="Popular Quizs"
+            android:text="Popular Quizzes"
             android:textStyle="bold"
             android:textSize="20sp"/>
 

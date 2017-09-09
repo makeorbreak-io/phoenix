@@ -13,15 +13,11 @@ import android.view.ViewGroup;
 import phoenix.uniquizandroid.R;
 import phoenix.uniquizandroid.activity.dummy.DummyContent;
 import phoenix.uniquizandroid.activity.dummy.DummyContent.DummyItem;
+import phoenix.uniquizandroid.adapter.FieldCardAdapter;
 
 import java.util.List;
 
-/**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
+
 public class ExploreFragment extends Fragment {
 
 
@@ -47,7 +43,21 @@ public class ExploreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_explore_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_explore, container, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false);
+
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.fields_cards_view);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setAdapter(new FieldCardAdapter( null));
+
+        RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.subjects_cards_view);
+        recyclerView2.setLayoutManager(layoutManager);
+        recyclerView2.setHasFixedSize(true);
+        recyclerView2.setNestedScrollingEnabled(false);
+        recyclerView2.setAdapter(new FieldCardAdapter( null));
+
 
         return view;
     }

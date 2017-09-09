@@ -6,57 +6,78 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="phoenix.uniquizandroid.activity.QuizActivity">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:elevation="3dp"
         android:orientation="vertical"
         android:background="@color/colorPrimary">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:text="1 of 10"
-            android:textSize="10sp"
-            android:textAllCaps="true"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="9"
-            android:orientation="horizontal"
-            android:background="@color/colorPrimary">
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="6dp"
-                android:src="@drawable/ic_arrow_left_black"
-                android:tint="@android:color/white"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="10"
-
+                android:id="@+id/question_count_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.6"
                 android:gravity="center"
-                android:text="THIS IS A SIMPLE QUESTION?"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:text="1 of 10"
+                android:textSize="10sp"
+                android:textAllCaps="true"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="9"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimary">
+                <ImageButton
+                    android:id="@+id/previous_question_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_arrow_left_black"
+                    android:tint="@android:color/white"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent" />
+                <TextView
+                    android:id="@+id/question_view"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:gravity="center"
+                    android:text="THIS IS A SIMPLE QUESTION?"
+                    android:textColor="@android:color/white"/>
 
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="6dp"
-                android:src="@drawable/ic_arrow_right_black"
-                android:tint="@android:color/white"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent" />
-        </LinearLayout>    </LinearLayout>
+                <ImageButton
+                    android:id="@+id/next_question_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_arrow_right_black"
+                    android:tint="@android:color/white"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/finish_button"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:text="FINISH"
+            android:textColor="@android:color/white"
+            android:background="@android:color/transparent" />
+
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,7 +88,7 @@
         android:padding="20dp">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/answer1_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="4dp"
@@ -76,6 +97,7 @@
             android:background="@drawable/white_card" />
 
         <Button
+            android:id="@+id/answer2_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="4dp"
@@ -84,6 +106,7 @@
             android:background="@drawable/white_card"/>
 
         <Button
+            android:id="@+id/answer3_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="4dp"
@@ -93,6 +116,7 @@
         </Button>
 
         <Button
+            android:id="@+id/answer4_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="4dp"
