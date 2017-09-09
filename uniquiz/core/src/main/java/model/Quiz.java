@@ -30,6 +30,7 @@ public class Quiz implements Serializable {
     private String subjectName;
 
     private Long coursePk;
+    private String courseName;
 
     private String title;
 
@@ -37,6 +38,16 @@ public class Quiz implements Serializable {
 
     public Quiz() {
         questions = new LinkedList<>();
+    }
+
+    public Quiz(Difficulty difficulty, Long subjectPk, String subjectName, Long coursePk, String courseName, String title) {
+        this.difficulty = difficulty;
+        this.subjectPk = subjectPk;
+        this.subjectName = subjectName;
+        this.coursePk = coursePk;
+        this.courseName = courseName;
+        this.title = title;
+        this.questions = new LinkedList<>();
     }
 
     public Long getPk() {
@@ -103,6 +114,14 @@ public class Quiz implements Serializable {
         return questions;
     }
 
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -123,6 +142,6 @@ public class Quiz implements Serializable {
         for(Question q : this.questions){
             questions.add(q.toDTO());
         }
-        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.coursePk, this.title, popularityCounter);
+        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.subjectName, this.coursePk, this.courseName, this.title, popularityCounter);
     }
 }

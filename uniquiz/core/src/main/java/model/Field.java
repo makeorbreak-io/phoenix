@@ -25,6 +25,10 @@ public class Field implements Serializable {
     public Field() {
     }
 
+    public Field(String fieldName) {
+        this.fieldName = fieldName;
+    }
+
     public Long getPk() {
         return pk;
     }

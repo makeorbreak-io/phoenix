@@ -27,6 +27,12 @@ public class Course implements Serializable {
     public Course() {
     }
 
+    public Course(String courseName, String fieldName, Long fieldPk) {
+        this.courseName = courseName;
+        this.fieldName = fieldName;
+        this.fieldPk = fieldPk;
+    }
+
     public Long getPk() {
         return pk;
     }

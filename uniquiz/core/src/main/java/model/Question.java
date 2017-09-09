@@ -33,6 +33,11 @@ public class Question implements Serializable {
         answers = new LinkedList<>();
     }
 
+    public Question(String question) {
+        this.question = question;
+        this.answers = new LinkedList<>();
+    }
+
     public Long getPk() {
         return pk;
     }

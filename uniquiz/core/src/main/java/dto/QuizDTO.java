@@ -13,16 +13,19 @@ public class QuizDTO {
     private Long subjectPk;
     private String subjectName;
     private Long coursePk;
+    private String courseName;
     private String title;
     private Long popularityCounter;
 
     public QuizDTO(Long pk, List<QuestionDTO> questions, String difficulty,
-                    Long subjectPk, Long coursePk, String title, long popularityCounter){
+                    Long subjectPk, String subjectName, Long coursePk, String courseName, String title, long popularityCounter){
         this.setPk(pk);
         this.setQuestions(questions);
         this.setDifficulty(difficulty);
         this.setSubjectPk(subjectPk);
+        this.setSubjectName(subjectName);
         this.setCoursePk(coursePk);
+        this.setCourseName(courseName);
         this.setTitle(title);
         this.setPopularityCounter(popularityCounter);
     }
@@ -86,11 +89,15 @@ public class QuizDTO {
         this.subjectName = subjectName;
     }
 
-    public long getPopularityCounter() {
-        return popularityCounter;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public void setPopularityCounter(long popularityCounter) {
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setPopularityCounter(Long popularityCounter) {
         this.popularityCounter = popularityCounter;
     }
 }
