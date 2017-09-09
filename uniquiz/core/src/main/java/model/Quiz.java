@@ -33,6 +33,8 @@ public class Quiz implements Serializable {
 
     private String title;
 
+    private long popularityCounter;
+
     public Quiz() {
         questions = new LinkedList<>();
     }
@@ -43,14 +45,6 @@ public class Quiz implements Serializable {
 
     public void setPk(Long pk) {
         this.pk = pk;
-    }
-
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(LinkedList<Question> questions) {
-        this.questions = questions;
     }
 
     public Difficulty getDifficulty() {
@@ -89,8 +83,24 @@ public class Quiz implements Serializable {
         return subjectName;
     }
 
-    public void setSubjectName(String subjectName){
+    public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public long getPopularityCounter() {
+        return popularityCounter;
+    }
+
+    public void setPopularityCounter(long popularityCounter) {
+        this.popularityCounter = popularityCounter;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
     }
 
     @Override
@@ -113,6 +123,6 @@ public class Quiz implements Serializable {
         for(Question q : this.questions){
             questions.add(q.toDTO());
         }
-        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.coursePk, this.title);
+        return new QuizDTO(this.pk, questions, difficulty.name(), this.subjectPk, this.coursePk, this.title, popularityCounter);
     }
 }

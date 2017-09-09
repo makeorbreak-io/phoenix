@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="phoenix.uniquizandroid.activity.QuizActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="1 of 10"
+            android:textSize="10sp"
+            android:textAllCaps="true"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary">
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:src="@drawable/ic_arrow_left_black"
+                android:tint="@android:color/white"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+
+                android:gravity="center"
+                android:text="THIS IS A SIMPLE QUESTION?"
+                android:textColor="@android:color/white"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:src="@drawable/ic_arrow_right_black"
+                android:tint="@android:color/white"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent" />
+        </LinearLayout>    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/colorBackground"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="ANSWER 1"
+            android:background="@drawable/white_card" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="ANSWER 2"
+            android:background="@drawable/white_card"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="ANSWER 3"
+            android:background="@drawable/white_card">
+        </Button>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="ANSWER 4"
+            android:background="@drawable/white_card"/>
+    </LinearLayout>
+
+</LinearLayout>

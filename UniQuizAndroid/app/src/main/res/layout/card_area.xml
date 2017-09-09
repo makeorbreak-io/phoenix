@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="140dp"
+    android:layout_height="180dp"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    android:background="@drawable/white_card"
+    android:backgroundTint="@color/colorAccent">
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_science_black"
+        android:tint="@android:color/white"/>
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Area"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

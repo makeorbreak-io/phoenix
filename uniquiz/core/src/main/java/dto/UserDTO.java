@@ -1,5 +1,9 @@
 package dto;
 
+import model.User;
+
+import java.util.Set;
+
 /**
  * Created by Rafael Santos on 08-09-2017.
  */
@@ -9,15 +13,19 @@ public class UserDTO {
     private String password;
     private String name;
     private String email;
+    private Set<String> roles;
 
     public UserDTO(String username, String password,
-                   String name, String email){
+                   String name, String email, Set<String> roles){
         this.setUsername(username);
         this.setPassword(password);
         this.setName(name);
         this.setEmail(email);
+        this.setRoles(roles);
     }
 
+    public UserDTO() {
+    }
 
     public String getUsername() {
         return username;
@@ -49,5 +57,13 @@ public class UserDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
     }
 }

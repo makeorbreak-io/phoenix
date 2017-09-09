@@ -1,10 +1,10 @@
 package model;
 
 import dto.UserDTO;
-import org.eclipse.persistence.jpa.jpql.parser.DateTime;
-
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 /**
@@ -12,6 +12,8 @@ import java.util.regex.Pattern;
  */
 @Entity
 public class User implements Serializable {
+
+    public enum Roles{STUDENT, TEACHER}
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
             Pattern.CASE_INSENSITIVE);
@@ -27,7 +29,11 @@ public class User implements Serializable {
     @Id
     private String email;
 
+    private Set<Roles> roles;
+
     public User() {
+        this.roles = new HashSet<>();
+        this.roles.add(Roles.STUDENT);
     }
 
     public User(String username, String password, String name, String email){
@@ -35,6 +41,8 @@ public class User implements Serializable {
         this.password = password;
         this.name = name;
         this.email = email;
+        this.roles = new HashSet<>();
+        this.roles.add(Roles.STUDENT);
     }
 
     public String getUsername() {
@@ -69,6 +77,14 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public Set<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Roles> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -85,6 +101,11 @@ public class User implements Serializable {
     }
 
     public UserDTO toDTO(){
-        return new UserDTO(username, password, name, email);
+        Set<String> set = new HashSet<>();
+        for(Roles role : roles){
+            set.add(role.name());
+        }
+
+        return new UserDTO(username, password, name, email, set);
     }
 }

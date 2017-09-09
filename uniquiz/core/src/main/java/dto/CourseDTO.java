@@ -18,6 +18,9 @@ public class CourseDTO {
         this.setFieldPk(fieldPk);
     }
 
+    public CourseDTO() {
+    }
+
     public Long getPk() {
         return pk;
     }
