@@ -122,6 +122,10 @@ public class Quiz implements Serializable {
         this.courseName = courseName;
     }
 
+    public void incrementPopularity(){
+        this.popularityCounter++;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
