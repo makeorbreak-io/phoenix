@@ -53,7 +53,7 @@ public class Question implements Serializable {
         return answers;
     }
 
-    public void setAnswers(LinkedList<Answer> answers) {
+    public void setAnswers(List<Answer> answers) {
         this.answers = answers;
     }
 
