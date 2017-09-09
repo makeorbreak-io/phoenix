@@ -10,6 +10,7 @@
         <class>model.Solution</class>
         <class>model.Subject</class>
         <class>model.User</class>
+        <class>model.UserStatistics</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:.\db\uniquiz;MV_STORE=FALSE;AUTO_SERVER=TRUE"/>

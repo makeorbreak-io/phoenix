@@ -34,9 +34,12 @@ public class User implements Serializable {
 
     private Set<Roles> roles;
 
+    private UserStatistics userStatistics;
+
     public User() {
         this.roles = new HashSet<>();
         this.roles.add(Roles.STUDENT);
+        this.userStatistics = new UserStatistics();
     }
 
     public User(String username, String password, String name, String email){
@@ -46,6 +49,7 @@ public class User implements Serializable {
         this.email = email;
         this.roles = new HashSet<>();
         this.roles.add(Roles.STUDENT);
+        this.userStatistics = new UserStatistics();
     }
 
     public String getUsername() {
@@ -90,6 +94,14 @@ public class User implements Serializable {
 
     public void setRoles(Set<Roles> roles) {
         this.roles = roles;
+    }
+
+    public UserStatistics getUserStatistics() {
+        return userStatistics;
+    }
+
+    public void setUserStatistics(UserStatistics userStatistics) {
+        this.userStatistics = userStatistics;
     }
 
     @Override
