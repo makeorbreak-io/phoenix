@@ -6,7 +6,7 @@
     android:layout_margin="8dp"
     android:elevation="4dp"
     android:background="@drawable/white_card"
-    android:backgroundTint="@color/colorAccent">
+    android:backgroundTint="@android:color/holo_orange_light">
     <ImageView
         android:id="@+id/item_icon"
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="name"
-        android:textSize="20dp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:textAllCaps="true"
         android:textColor="@android:color/white"/>

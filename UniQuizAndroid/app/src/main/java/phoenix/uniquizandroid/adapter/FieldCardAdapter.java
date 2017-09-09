@@ -1,5 +1,6 @@
 package phoenix.uniquizandroid.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +18,11 @@ import phoenix.uniquizandroid.dto.FieldDTO;
 public class FieldCardAdapter extends RecyclerView.Adapter<FieldCardAdapter.ViewHolder>{
 
 
+    private Context mContext;
     private FieldDTO[] mFields;
 
-    public FieldCardAdapter(FieldDTO[] fields){
+    public FieldCardAdapter(Context context, FieldDTO[] fields){
+        mContext = context;
         mFields = fields;
     }
 

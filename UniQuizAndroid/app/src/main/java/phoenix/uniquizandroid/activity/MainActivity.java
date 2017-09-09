@@ -11,7 +11,6 @@ import phoenix.uniquizandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     ExploreFragment explore = new ExploreFragment();
     //HomeFragment home = new HomeFragment();
 
@@ -25,15 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
                     // manager.beginTransaction().replace(R.id.content, home).commit();
                     return true;
                 case R.id.navigation_explore:
-                    mTextMessage.setText("Explore");
                     manager.beginTransaction().replace(R.id.content, explore).commit();
                     return true;
                 case R.id.navigation_profile:
-                    mTextMessage.setText("Profile");
                     return true;
             }
             return false;

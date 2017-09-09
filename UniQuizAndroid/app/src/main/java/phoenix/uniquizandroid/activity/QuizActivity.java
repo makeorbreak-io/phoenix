@@ -59,7 +59,6 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         quiz = (QuizDTO) getIntent().getSerializableExtra("quiz");
-        isRevision = (boolean) getIntent().getSerializableExtra("isRevision");
 
         questions = quiz.getQuestions();
         questionCount = 1;
@@ -71,10 +70,8 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 quizAnswers[questionsListPos] = 1;
-                answer1Button.setBackgroundColor(Color.GREEN);
-                answer2Button.setBackgroundColor(Color.WHITE);
-                answer3Button.setBackgroundColor(Color.WHITE);
-                answer4Button.setBackgroundColor(Color.WHITE);
+                resetButtonsColor();
+                answer1Button.setBackgroundColor(Color.rgb(173,255,47));
             }
         });
 
@@ -83,10 +80,9 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 quizAnswers[questionsListPos] = 2;
-                answer1Button.setBackgroundColor(Color.WHITE);
-                answer2Button.setBackgroundColor(Color.GREEN);
-                answer3Button.setBackgroundColor(Color.WHITE);
-                answer4Button.setBackgroundColor(Color.WHITE);
+                resetButtonsColor();
+                answer2Button.setBackgroundColor(Color.rgb(173,255,47));
+
             }
         });
 
@@ -95,10 +91,9 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 quizAnswers[questionsListPos] = 3;
-                answer1Button.setBackgroundColor(Color.WHITE);
-                answer2Button.setBackgroundColor(Color.WHITE);
-                answer3Button.setBackgroundColor(Color.GREEN);
-                answer4Button.setBackgroundColor(Color.WHITE);
+                resetButtonsColor();
+                answer3Button.setBackgroundColor(Color.rgb(173,255,47));
+
             }
         });
 
@@ -107,10 +102,8 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 quizAnswers[questionsListPos] = 4;
-                answer1Button.setBackgroundColor(Color.WHITE);
-                answer2Button.setBackgroundColor(Color.WHITE);
-                answer3Button.setBackgroundColor(Color.WHITE);
-                answer4Button.setBackgroundColor(Color.GREEN);
+                resetButtonsColor();
+                answer4Button.setBackgroundColor(Color.rgb(173,255,47));
             }
         });
 
@@ -157,6 +150,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        refreshQuestion();
     }
 
     private void refreshQuestion(){
@@ -170,7 +164,7 @@ public class QuizActivity extends AppCompatActivity {
     private void refreshButtons(){
         List<AnswerDTO> answers = questions.get(questionsListPos).getAnswers();
         int numberOfAnswers = answers.size();
-
+        resetButtonsColor();
         answer1Button.setText(answers.get(0).getAnswer());
         answer2Button.setText(answers.get(1).getAnswer());
         if(numberOfAnswers >= 3){
@@ -212,29 +206,24 @@ public class QuizActivity extends AppCompatActivity {
                 answer++;
                 switch(answer){
                     case 1:
+                        resetButtonsColor();
                         answer1Button.setBackgroundColor(Color.RED);
-                        answer2Button.setBackgroundColor(Color.WHITE);
-                        answer3Button.setBackgroundColor(Color.WHITE);
-                        answer4Button.setBackgroundColor(Color.WHITE);
+
 
                         break;
                     case 2:
+                        resetButtonsColor();
                         answer2Button.setBackgroundColor(Color.RED);
-                        answer1Button.setBackgroundColor(Color.WHITE);
-                        answer3Button.setBackgroundColor(Color.WHITE);
-                        answer4Button.setBackgroundColor(Color.WHITE);
                         break;
                     case 3:
+                        resetButtonsColor();
                         answer3Button.setBackgroundColor(Color.RED);
-                        answer2Button.setBackgroundColor(Color.WHITE);
-                        answer1Button.setBackgroundColor(Color.WHITE);
-                        answer4Button.setBackgroundColor(Color.WHITE);
+
                         break;
                     case 4:
+                        resetButtonsColor();
                         answer4Button.setBackgroundColor(Color.RED);
-                        answer2Button.setBackgroundColor(Color.WHITE);
-                        answer3Button.setBackgroundColor(Color.WHITE);
-                        answer1Button.setBackgroundColor(Color.WHITE);
+
                         break;
                 }
             }
@@ -249,16 +238,16 @@ public class QuizActivity extends AppCompatActivity {
 
             switch(answer){
                 case 1:
-                    answer1Button.setBackgroundColor(Color.GREEN);
+                    answer1Button.setBackgroundColor(Color.rgb(173,255,47));
                     break;
                 case 2:
-                    answer2Button.setBackgroundColor(Color.GREEN);
+                    answer2Button.setBackgroundColor(Color.rgb(173,255,47));
                     break;
                 case 3:
-                    answer3Button.setBackgroundColor(Color.GREEN);
+                    answer3Button.setBackgroundColor(Color.rgb(173,255,47));
                     break;
                 case 4:
-                    answer4Button.setBackgroundColor(Color.GREEN);
+                    answer4Button.setBackgroundColor(Color.rgb(173,255,47));
                     break;
             }
 
@@ -301,13 +290,22 @@ public class QuizActivity extends AppCompatActivity {
                     })
                     .setNegativeButton("Back", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
+                            new HttpRequestTask().execute();
                             onBackPressed();
                         }
                     });
+            builder.create().show();
         }else{
             new HttpRequestTask().execute();
             onBackPressed();
         }
+    }
+
+    private void resetButtonsColor(){
+        answer1Button.setBackgroundColor(Color.WHITE);
+        answer2Button.setBackgroundColor(Color.WHITE);
+        answer3Button.setBackgroundColor(Color.WHITE);
+        answer4Button.setBackgroundColor(Color.WHITE);
     }
 
     private void reviewQuiz(){
@@ -320,7 +318,6 @@ public class QuizActivity extends AppCompatActivity {
         refreshQuestion();
     }
 
-
     private class HttpRequestTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
@@ -330,7 +327,7 @@ public class QuizActivity extends AppCompatActivity {
                     .host(webProperties.getHost())
                     .port(webProperties.getPort())
                     .path(webProperties.getAppBaseUri()
-                            +"/" + webProperties.getQuizUri())
+                            +"/" + webProperties.getSolutionsUri())
                     .build();
 
             HttpHeaders headers = new HttpHeaders();
@@ -353,7 +350,9 @@ public class QuizActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(final Boolean response) {
+            if(response){
 
+            }
         }
     }
 

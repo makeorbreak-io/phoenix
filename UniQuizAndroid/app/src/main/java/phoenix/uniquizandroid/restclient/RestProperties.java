@@ -41,6 +41,11 @@ public class RestProperties {
         return properties.getProperty("webservice.quiz.baseuri");
     }
 
+    public String getSolutionsUri(){
+        return properties.getProperty("webservice.solutions.baseuri");
+    }
+
+
     public String getFieldUri(){
         return properties.getProperty("webservice.field.baseuri");
     }

@@ -23,8 +23,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 import phoenix.uniquizandroid.R;
 import phoenix.uniquizandroid.activity.dummy.DummyContent;
 import phoenix.uniquizandroid.activity.dummy.DummyContent.DummyItem;
+import phoenix.uniquizandroid.adapter.ExploreQuizAdapter;
 import phoenix.uniquizandroid.adapter.FieldCardAdapter;
+import phoenix.uniquizandroid.adapter.SubjectCardAdapter;
 import phoenix.uniquizandroid.dto.FieldDTO;
+import phoenix.uniquizandroid.dto.QuizDTO;
+import phoenix.uniquizandroid.dto.SimplifiedQuizDTO;
 import phoenix.uniquizandroid.dto.SubjectDTO;
 import phoenix.uniquizandroid.restclient.RestProperties;
 
@@ -33,6 +37,7 @@ import java.util.List;
 
 public class ExploreFragment extends Fragment {
 
+    private View rootView;
 
 
     /**
@@ -56,23 +61,21 @@ public class ExploreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_explore, container, false);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false);
-
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.fields_cards_view);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setNestedScrollingEnabled(false);
-        recyclerView.setAdapter(new FieldCardAdapter( null));
-
-        RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.subjects_cards_view);
-        recyclerView2.setLayoutManager(layoutManager);
-        recyclerView2.setHasFixedSize(true);
-        recyclerView2.setNestedScrollingEnabled(false);
-        recyclerView2.setAdapter(new FieldCardAdapter( null));
+        rootView = inflater.inflate(R.layout.fragment_explore, container, false);
 
 
-        return view;
+
+
+/*        RecyclerView quizView = (RecyclerView) rootView.findViewById(R.id.subjects_cards_view);
+        layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
+        quizView.setLayoutManager(layoutManager);
+        quizView.setHasFixedSize(true);
+        quizView.setNestedScrollingEnabled(false);
+        quizView.setAdapter(new FieldCardAdapter( null));*/
+        new GetFieldsTask().execute();
+        new GetSubjectsTask().execute();
+        new GetQuizzesTask().execute();
+        return rootView;
     }
 
     public class GetFieldsTask extends AsyncTask<Void, Void, FieldDTO[]> {
@@ -99,7 +102,12 @@ public class ExploreFragment extends Fragment {
         @Override
         protected void onPostExecute(final FieldDTO[] field) {
             if (field != null) {
-
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false);
+                RecyclerView fieldsView = (RecyclerView) rootView.findViewById(R.id.fields_cards_view);
+                fieldsView.setLayoutManager(layoutManager);
+                fieldsView.setHasFixedSize(true);
+                fieldsView.setNestedScrollingEnabled(false);
+                fieldsView.setAdapter(new FieldCardAdapter(ExploreFragment.this.getContext(), field));
             } else {
 
             }
@@ -116,7 +124,7 @@ public class ExploreFragment extends Fragment {
             final UriComponents uri = UriComponentsBuilder.newInstance().scheme(webProperties.getScheme())
                     .host(webProperties.getHost())
                     .path(webProperties.getAppBaseUri()
-                            +"/" + webProperties.getFieldUri()) .build();
+                            +"/" + webProperties.getSubjectUri()) .build();
 
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
@@ -128,14 +136,53 @@ public class ExploreFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(final SubjectDTO[] field) {
-            if (field != null) {
-
+        protected void onPostExecute(final SubjectDTO[] subjects) {
+            if (subjects != null) {
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL, false);
+                RecyclerView subjectsView = (RecyclerView) rootView.findViewById(R.id.subjects_cards_view);
+                subjectsView.setLayoutManager(layoutManager);
+                subjectsView.setHasFixedSize(true);
+                subjectsView.setNestedScrollingEnabled(false);
+                subjectsView.setAdapter(new SubjectCardAdapter(subjects));
             } else {
 
             }
         }
+    }
 
-        //TODO most popular quizzes
+    public class GetQuizzesTask extends AsyncTask<Void, Void, QuizDTO[]> {
+
+        @Override
+        protected QuizDTO[] doInBackground(Void... params) {
+
+
+            RestProperties webProperties = new RestProperties(ExploreFragment.this.getContext());
+            final UriComponents uri = UriComponentsBuilder.newInstance().scheme(webProperties.getScheme())
+                    .host(webProperties.getHost())
+                    .path(webProperties.getAppBaseUri()
+                            +"/" + webProperties.getQuizUri()) .build();
+
+            RestTemplate restTemplate = new RestTemplate();
+            restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+            ResponseEntity<QuizDTO[]> result = restTemplate.getForEntity(uri.toUri(), QuizDTO[].class);
+
+            QuizDTO[] response = result.getBody();
+
+            return response;
+        }
+
+        @Override
+        protected void onPostExecute(final QuizDTO[] subjects) {
+            if (subjects != null) {
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
+                RecyclerView subjectsView = (RecyclerView) rootView.findViewById(R.id.most_viewed_quiz_list);
+                subjectsView.setLayoutManager(layoutManager);
+                subjectsView.setHasFixedSize(true);
+                subjectsView.setNestedScrollingEnabled(false);
+                subjectsView.setAdapter(new ExploreQuizAdapter(ExploreFragment.this.getContext(), subjects));
+            } else {
+
+            }
+        }
     }
 }
