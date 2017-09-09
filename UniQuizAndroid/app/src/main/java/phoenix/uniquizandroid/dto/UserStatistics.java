@@ -7,7 +7,6 @@ package phoenix.uniquizandroid.dto;
 
 public class UserStatistics {
 
-    private long pk;
     private long totalRightAnswers;
     private long totalWrongAnswers;
     private long totalQuizzesSolved;
@@ -21,14 +20,6 @@ public class UserStatistics {
         this.totalWrongAnswers = totalWrongAnswers;
         this.totalQuizzesSolved = totalQuizzesSolved;
         this.totalQuizzesPassed = totalQuizzesPassed;
-    }
-
-    public long getPk() {
-        return pk;
-    }
-
-    public void setPk(long pk) {
-        this.pk = pk;
     }
 
     public long getTotalRightAnswers() {

@@ -5,14 +5,13 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import phoenix.uniquizandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 
     ExploreFragment explore = new ExploreFragment();
-    //HomeFragment home = new HomeFragment();
+    HomeFragment home = new HomeFragment();
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    // manager.beginTransaction().replace(R.id.content, home).commit();
+                    manager.beginTransaction().replace(R.id.content, home).commit();
                     return true;
                 case R.id.navigation_explore:
                     manager.beginTransaction().replace(R.id.content, explore).commit();

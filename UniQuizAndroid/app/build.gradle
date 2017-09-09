@@ -42,5 +42,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.+'
     compile 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.3.2'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     testCompile 'junit:junit:4.12'
 }
