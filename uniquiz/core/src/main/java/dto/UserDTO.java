@@ -24,6 +24,8 @@ public class UserDTO {
         this.setRoles(roles);
     }
 
+    public UserDTO() {
+    }
 
     public String getUsername() {
         return username;

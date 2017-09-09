@@ -22,6 +22,9 @@ public class SolutionDTO {
         this.setWrongAnswers(wrongAnswers);
     }
 
+    public SolutionDTO() {
+    }
+
     public Long getPk() {
         return pk;
     }

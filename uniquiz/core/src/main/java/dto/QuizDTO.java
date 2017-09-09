@@ -26,6 +26,9 @@ public class QuizDTO {
         this.setPopularityCounter(popularityCounter);
     }
 
+    public QuizDTO() {
+    }
+
     public Long getPk() {
         return pk;
     }

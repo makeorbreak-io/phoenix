@@ -46,14 +46,6 @@ public class Quiz implements Serializable {
         this.pk = pk;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(LinkedList<Question> questions) {
-        this.questions = questions;
-    }
-
     public Difficulty getDifficulty() {
         return difficulty;
     }
@@ -96,6 +88,10 @@ public class Quiz implements Serializable {
 
     public void setPopularityCounter(long popularityCounter) {
         this.popularityCounter = popularityCounter;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
     }
 
     @Override
