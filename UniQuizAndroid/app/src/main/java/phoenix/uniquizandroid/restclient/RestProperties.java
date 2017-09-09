@@ -45,7 +45,6 @@ public class RestProperties {
         return properties.getProperty("webservice.solutions.baseuri");
     }
 
-
     public String getFieldUri(){
         return properties.getProperty("webservice.field.baseuri");
     }
@@ -62,6 +61,9 @@ public class RestProperties {
         return properties.getProperty("webservice.login.baseuri");
     }
 
+    public String getSignUpUri(){
+        return properties.getProperty("webservice.signup.baseuri");
+    }
 
     public String getUsersUri(){
         return properties.getProperty("webservice.users.baseuri");
