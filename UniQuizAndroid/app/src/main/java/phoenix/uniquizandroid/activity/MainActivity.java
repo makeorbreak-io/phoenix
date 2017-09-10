@@ -11,7 +11,8 @@ import phoenix.uniquizandroid.R;
 public class MainActivity extends AppCompatActivity {
 
     ExploreFragment explore = new ExploreFragment();
-    HomeFragment home = new HomeFragment();
+    SearchFragment search = new SearchFragment();
+    ProfileFragment profile = new ProfileFragment();
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -22,13 +23,15 @@ public class MainActivity extends AppCompatActivity {
             android.app.FragmentManager manager = getFragmentManager();
 
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    manager.beginTransaction().replace(R.id.content, home).commit();
-                    return true;
                 case R.id.navigation_explore:
                     manager.beginTransaction().replace(R.id.content, explore).commit();
                     return true;
+                case R.id.navigation_search:
+                    manager.beginTransaction().replace(R.id.content, search).commit();
+                    return true;
+
                 case R.id.navigation_profile:
+                    manager.beginTransaction().replace(R.id.content, profile).commit();
                     return true;
             }
             return false;
@@ -42,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        android.app.FragmentManager manager = getFragmentManager();
+        manager.beginTransaction().replace(R.id.content, explore).commit();
     }
 
 }

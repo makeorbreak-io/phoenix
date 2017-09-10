@@ -12,7 +12,7 @@
         android:gravity="center_vertical"
         android:text="Search"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimary"
         android:textSize="30sp"/>
     <android.support.v7.widget.SearchView
         android:id="@+id/search_bar"
@@ -29,5 +29,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_bar"
-        android:layout_margin="10dp" />
+        android:layout_margin="6dp" />
 </RelativeLayout>

@@ -10,50 +10,56 @@ import android.widget.TextView;
 
 import phoenix.uniquizandroid.R;
 import phoenix.uniquizandroid.activity.QuizzesActivity;
-import phoenix.uniquizandroid.dto.FieldDTO;
-
-import phoenix.uniquizandroid.dto.SubjectDTO;
-
+import phoenix.uniquizandroid.dto.CourseDTO;
 
 /**
- * Created by Luis Gouveia on 08/09/2017.
+ * Created by Luis Gouveia on 10/09/2017.
  */
 
-public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.ViewHolder>{
+public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
 
     private Context mContext;
-    private SubjectDTO[] mSubjects;
+    private CourseDTO[] mCourses;
 
-    public SubjectCardAdapter(Context context, SubjectDTO[] subjects){
-        this.mContext = context;
-        mSubjects = subjects;
+    public CoursesAdapter(Context context, CourseDTO[] courses) {
+        mContext = context;
+        mCourses = courses;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.explore_card_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_item, parent, false);
         return new ViewHolder(itemView);
+
     }
 
+
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        SubjectDTO subject = mSubjects[position];
-        holder.itemName.setText(subject.getSubjectName());
+    public void onBindViewHolder(ViewHolder view, int position) {
+
+        ViewHolder holder = (ViewHolder) view;
+        CourseDTO course = mCourses[position];
+        holder.position = position;
+        holder.courseName.setText(course.getCourseName());
         holder.extras = new Intent(mContext, QuizzesActivity.class);
-        holder.extras.putExtra("subject", subject);
+        holder.extras.putExtra("course", course);
+
     }
+
 
     @Override
     public int getItemCount() {
-        return mSubjects.length;
+        return mCourses.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView itemName;
+        int position;
+        TextView courseName;
         Intent extras;
 
         public ViewHolder(View itemView) {
+
             super(itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -61,8 +67,7 @@ public class SubjectCardAdapter extends RecyclerView.Adapter<SubjectCardAdapter.
                     mContext.startActivity(extras);
                 }
             });
-            itemName = (TextView) itemView.findViewById(R.id.item_name);
+            courseName = (TextView) itemView.findViewById(R.id.course_name);
         }
     }
 }
-

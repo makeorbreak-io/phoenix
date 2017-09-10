@@ -2,13 +2,13 @@ package phoenix.uniquizandroid.activity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
+import android.support.v7.widget.SearchView;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -23,6 +23,7 @@ import java.util.Map;
 
 import phoenix.uniquizandroid.R;
 import phoenix.uniquizandroid.adapter.SearchAdapter;
+import phoenix.uniquizandroid.dto.QuizDTO;
 import phoenix.uniquizandroid.dto.SimplifiedQuizDTO;
 import phoenix.uniquizandroid.restclient.RestProperties;
 
@@ -71,10 +72,10 @@ public class SearchFragment extends Fragment{
         return rootView;
     }
 
-    private class HttpRequestTask extends AsyncTask<Void, Void, SimplifiedQuizDTO[]> {
+    private class HttpRequestTask extends AsyncTask<Void, Void, QuizDTO[]> {
 
         @Override
-        protected SimplifiedQuizDTO[] doInBackground(Void... params) {
+        protected QuizDTO[] doInBackground(Void... params) {
             RestProperties webProperties = new RestProperties(SearchFragment.this.getContext());
             final UriComponents uri = UriComponentsBuilder.newInstance().scheme(webProperties.getScheme())
                     .host(webProperties.getHost()).path(webProperties.getAppBaseUri()+ "/" + webProperties.getSearchUri()).queryParam("title", search).build();
@@ -84,15 +85,15 @@ public class SearchFragment extends Fragment{
 
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            ResponseEntity<SimplifiedQuizDTO[]> result = restTemplate.exchange(uri.toUri(), HttpMethod.GET, request, SimplifiedQuizDTO[].class);
+            ResponseEntity<QuizDTO[]> result = restTemplate.exchange(uri.toUri(), HttpMethod.GET, request, QuizDTO[].class);
 
-            SimplifiedQuizDTO[] objects = result.getBody();
+            QuizDTO[] objects = result.getBody();
 
             return objects;
         }
 
         @Override
-        protected void onPostExecute(final SimplifiedQuizDTO[] results) {
+        protected void onPostExecute(final QuizDTO[] results) {
 
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

@@ -1,15 +1,21 @@
 package phoenix.uniquizandroid.dto;
 
 
+import java.io.Serializable;
+
 /**
  * Created by Rafael Santos on 08-09-2017.
  */
-public class CourseDTO {
+public class CourseDTO implements Serializable{
 
     private Long pk;
     private String courseName;
     private String fieldName;
     private Long fieldPk;
+
+    public CourseDTO(){
+
+    }
 
     public CourseDTO(Long pk, String courseName,
                         String fieldName, Long fieldPk){

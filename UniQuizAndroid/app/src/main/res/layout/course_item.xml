@@ -3,28 +3,19 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    android:padding="8dp"
+    android:padding="13dp"
     android:background="@drawable/white_card"
     android:elevation="2dp">
 
     <TextView
-        android:id="@+id/quiz_name"
+        android:id="@+id/course_name"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:layout_margin="4dp"
-        android:text="Quiz Name"
+        android:text="Course Name"
         android:textStyle="bold"
         android:textSize="15dp"/>
-    <TextView
-        android:id="@+id/quiz_difficulty"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="18dp"
-        android:text="DIFICULTY"
-        android:textSize="10dp"
-        android:textAllCaps="true"/>
+
 
 </LinearLayout>

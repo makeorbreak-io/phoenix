@@ -113,31 +113,35 @@ public class QuizActivity extends AppCompatActivity {
         nextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(questionsListPos < questions.size()){
+                if (questionsListPos < questions.size() - 1) {
                     nextQuestion();
-                    if(questionsListPos == 1){
-                        previousQuestion.setClickable(true);
-                        previousQuestion.setVisibility(View.VISIBLE);
+                    if (questionsListPos == questions.size() - 1) {
+                        nextQuestion.setClickable(false);
+                        nextQuestion.setVisibility(View.INVISIBLE);
                     }
-                }else{
-                    nextQuestion.setClickable(false);
-                    nextQuestion.setVisibility(View.INVISIBLE);
                 }
+                if (questionsListPos == 1) {
+                    previousQuestion.setClickable(true);
+                    previousQuestion.setVisibility(View.VISIBLE);
+                }
+
             }
+
         });
 
         previousQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(questionsListPos > 0){
+                if(questionsListPos > 0) {
                     previousQuestion();
-                    if(questionsListPos == questions.size()-1){
+                    if (questionsListPos == 0) {
+                        previousQuestion.setClickable(false);
+                        previousQuestion.setVisibility(View.INVISIBLE);
+                    }
+                    if (questionsListPos == questions.size() - 2) {
                         nextQuestion.setClickable(true);
                         nextQuestion.setVisibility(View.VISIBLE);
                     }
-                }else{
-                    previousQuestion.setClickable(false);
-                    previousQuestion.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -149,7 +153,8 @@ public class QuizActivity extends AppCompatActivity {
                 finishQuiz();
             }
         });
-
+        previousQuestion.setClickable(false);
+        previousQuestion.setVisibility(View.INVISIBLE );
         refreshQuestion();
     }
 
@@ -281,14 +286,14 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("You have answered correctly to " + correctAns + "questions, with " + wrongAns + "answers wrong.")
+            builder.setMessage("You have answered correctly to " + correctAns + " questions, with " + wrongAns + " answers wrong.")
                     .setPositiveButton("Review", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             isRevision = true;
                             reviewQuiz();
                         }
                     })
-                    .setNegativeButton("Back", new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Finish", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             new HttpRequestTask().execute();
                             onBackPressed();
@@ -318,10 +323,10 @@ public class QuizActivity extends AppCompatActivity {
         refreshQuestion();
     }
 
-    private class HttpRequestTask extends AsyncTask<Void, Void, Boolean> {
+    private class HttpRequestTask extends AsyncTask<Void, Void, SolutionDTO> {
 
         @Override
-        protected Boolean doInBackground(Void... params) {
+        protected SolutionDTO doInBackground(Void... params) {
             RestProperties webProperties = new RestProperties(QuizActivity.this);
             final UriComponents uri = UriComponentsBuilder.newInstance().scheme(webProperties.getScheme())
                     .host(webProperties.getHost())
@@ -333,7 +338,7 @@ public class QuizActivity extends AppCompatActivity {
             HttpHeaders headers = new HttpHeaders();
 
             SolutionDTO body = new SolutionDTO(quiz.getPk(),
-                    AppSession.loggedUser.getUsername(),
+                    AppSession.loggedUser.getEmail(),
                     Byte.valueOf(String.valueOf(correctAns)),
                     Byte.valueOf(String.valueOf(wrongAns)));
 
@@ -341,18 +346,15 @@ public class QuizActivity extends AppCompatActivity {
 
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-            ResponseEntity<Boolean> result = restTemplate.exchange(uri.toUri(), HttpMethod.POST, request, Boolean.class);
+            ResponseEntity<SolutionDTO> result = restTemplate.exchange(uri.toUri(), HttpMethod.POST, request, SolutionDTO.class);
 
-            Boolean response = result.getBody();
+            SolutionDTO response = result.getBody();
 
             return response;
         }
 
         @Override
-        protected void onPostExecute(final Boolean response) {
-            if(response){
-
-            }
+        protected void onPostExecute(final SolutionDTO response) {
         }
     }
 

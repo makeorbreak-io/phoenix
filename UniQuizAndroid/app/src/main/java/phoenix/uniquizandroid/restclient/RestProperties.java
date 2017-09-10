@@ -49,6 +49,11 @@ public class RestProperties {
         return properties.getProperty("webservice.field.baseuri");
     }
 
+    public String getCourseUri(){
+        return properties.getProperty("webservice.course.baseuri");
+    }
+
+
     public String getSubjectUri(){
         return properties.getProperty("webservice.subject.baseuri");
     }

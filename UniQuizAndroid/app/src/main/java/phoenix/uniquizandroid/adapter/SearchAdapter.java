@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import phoenix.uniquizandroid.R;
 import phoenix.uniquizandroid.activity.QuizActivity;
+import phoenix.uniquizandroid.dto.QuizDTO;
 import phoenix.uniquizandroid.dto.SimplifiedQuizDTO;
 
 /**
@@ -20,9 +21,9 @@ import phoenix.uniquizandroid.dto.SimplifiedQuizDTO;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder>{
 
     private Context mContext;
-    private SimplifiedQuizDTO[] mQuizzes;
+    private QuizDTO[] mQuizzes;
 
-    public SearchAdapter(Context mContext, SimplifiedQuizDTO[] mResults) {
+    public SearchAdapter(Context mContext, QuizDTO[] mResults) {
         this.mContext = mContext;
         this.mQuizzes = mResults;
 
@@ -40,15 +41,16 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder view, int position) {
 
         ViewHolder holder = (ViewHolder)view;
-        SimplifiedQuizDTO quiz =  mQuizzes[position];
+        QuizDTO quiz =  mQuizzes[position];
         holder.position = position;
         holder.quizName.setText(quiz.getTitle());
         holder.quizDifficulty.setText(quiz.getDifficulty());
         holder.extras = new Intent(mContext, QuizActivity.class);
+        holder.extras.putExtra("quiz", quiz);
 
     }
 
-    public void changeViewContent (SimplifiedQuizDTO[] newContent){
+    public void changeViewContent (QuizDTO[] newContent){
         mQuizzes = newContent;
         notifyDataSetChanged();
     }

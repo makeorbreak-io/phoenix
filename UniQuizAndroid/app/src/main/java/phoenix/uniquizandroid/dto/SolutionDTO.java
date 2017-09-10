@@ -8,22 +8,22 @@ public class SolutionDTO {
 
     private Long pk;
     private Long quizPk;
-    private String username;
+    private String email;
     private byte rightAnswers;
     private byte wrongAnswers;
 
-    public SolutionDTO(Long pk, Long quizPk, String username,
+    public SolutionDTO(Long pk, Long quizPk, String email,
                         byte rightAnswers, byte wrongAnswers){
         this.setPk(pk);
         this.setQuizPk(quizPk);
-        this.setUsername(username);
+        this.setEmail(email);
         this.setRightAnswers(rightAnswers);
         this.setWrongAnswers(wrongAnswers);
     }
-    public SolutionDTO(Long quizPk, String username,
+    public SolutionDTO(Long quizPk, String email,
                        byte rightAnswers, byte wrongAnswers){
         this.setQuizPk(quizPk);
-        this.setUsername(username);
+        this.setEmail(email);
         this.setRightAnswers(rightAnswers);
         this.setWrongAnswers(wrongAnswers);
     }
@@ -44,12 +44,12 @@ public class SolutionDTO {
         this.quizPk = quizPk;
     }
 
-    public String getUsername() {
-        return username;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public byte getRightAnswers() {

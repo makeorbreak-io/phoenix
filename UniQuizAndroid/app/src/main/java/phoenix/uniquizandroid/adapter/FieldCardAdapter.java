@@ -1,6 +1,7 @@
 package phoenix.uniquizandroid.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import phoenix.uniquizandroid.R;
+import phoenix.uniquizandroid.activity.CoursesActivity;
 import phoenix.uniquizandroid.dto.FieldDTO;
 
 
@@ -36,6 +38,8 @@ public class FieldCardAdapter extends RecyclerView.Adapter<FieldCardAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         FieldDTO field = mFields[position];
         holder.itemName.setText(field.getFieldName());
+        holder.extras = new Intent(mContext, CoursesActivity.class);
+        holder.extras.putExtra("field", field);
     }
 
     @Override
@@ -46,9 +50,15 @@ public class FieldCardAdapter extends RecyclerView.Adapter<FieldCardAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView itemName;
+        Intent extras;
         public ViewHolder(View itemView) {
             super(itemView);
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(extras);
+                }
+            });
             itemName = (TextView) itemView.findViewById(R.id.item_name);
         }
     }

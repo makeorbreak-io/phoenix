@@ -63,15 +63,6 @@ public class ExploreFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_explore, container, false);
 
-
-
-
-/*        RecyclerView quizView = (RecyclerView) rootView.findViewById(R.id.subjects_cards_view);
-        layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
-        quizView.setLayoutManager(layoutManager);
-        quizView.setHasFixedSize(true);
-        quizView.setNestedScrollingEnabled(false);
-        quizView.setAdapter(new FieldCardAdapter( null));*/
         new GetFieldsTask().execute();
         new GetSubjectsTask().execute();
         new GetQuizzesTask().execute();
@@ -143,7 +134,7 @@ public class ExploreFragment extends Fragment {
                 subjectsView.setLayoutManager(layoutManager);
                 subjectsView.setHasFixedSize(true);
                 subjectsView.setNestedScrollingEnabled(false);
-                subjectsView.setAdapter(new SubjectCardAdapter(subjects));
+                subjectsView.setAdapter(new SubjectCardAdapter(ExploreFragment.this.getContext(), subjects));
             } else {
 
             }
