@@ -1,0 +1,6 @@
+framework module Pods_UniQuiziOS {
+  umbrella header "Pods-UniQuiziOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,857 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6616CB4A1F65398B00AE688C /* CoursesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616CB491F65398B00AE688C /* CoursesCollectionViewController.swift */; };
+		6616CB4C1F653A1E00AE688C /* CoursesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616CB4B1F653A1E00AE688C /* CoursesCollectionViewCell.swift */; };
+		6616CB4E1F65520400AE688C /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6616CB4D1F65520400AE688C /* CoursesTableViewController.swift */; };
+		6631042C1F641AFD000D524F /* FieldCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6631042B1F641AFD000D524F /* FieldCollectionViewController.swift */; };
+		663C48991F62A4F300D2CD8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48981F62A4F300D2CD8F /* AppDelegate.swift */; };
+		663C489B1F62A4F300D2CD8F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C489A1F62A4F300D2CD8F /* FirstViewController.swift */; };
+		663C489D1F62A4F300D2CD8F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C489C1F62A4F300D2CD8F /* SecondViewController.swift */; };
+		663C48A01F62A4F300D2CD8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663C489E1F62A4F300D2CD8F /* Main.storyboard */; };
+		663C48A21F62A4F300D2CD8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663C48A11F62A4F300D2CD8F /* Assets.xcassets */; };
+		663C48A51F62A4F300D2CD8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663C48A31F62A4F300D2CD8F /* LaunchScreen.storyboard */; };
+		663C48B01F62A4F300D2CD8F /* UniQuiziOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48AF1F62A4F300D2CD8F /* UniQuiziOSTests.swift */; };
+		663C48BB1F62A4F300D2CD8F /* UniQuiziOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48BA1F62A4F300D2CD8F /* UniQuiziOSUITests.swift */; };
+		663C48C91F62A54F00D2CD8F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48C81F62A54F00D2CD8F /* HomeViewController.swift */; };
+		663C48CB1F62B5D700D2CD8F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48CA1F62B5D700D2CD8F /* SearchTableViewController.swift */; };
+		663C48CD1F62B61700D2CD8F /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48CC1F62B61700D2CD8F /* SearchTableViewCell.swift */; };
+		663C48D01F62B8B800D2CD8F /* ModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48CF1F62B8B800D2CD8F /* ModelObjects.swift */; };
+		663C48D21F62BBEC00D2CD8F /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663C48D11F62BBEC00D2CD8F /* Properties.swift */; };
+		66636ABE1F649E7600A481B8 /* Pods_UniQuiziOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66636ABD1F649E7600A481B8 /* Pods_UniQuiziOS.framework */; };
+		66B513EB1F65357C005CAF4C /* FieldCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B513EA1F65357C005CAF4C /* FieldCollectionViewCell.swift */; };
+		66BBD3071F630A3A00AF1351 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BBD3061F630A3A00AF1351 /* QuizViewController.swift */; };
+		66BBD3091F639A0500AF1351 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BBD3081F639A0500AF1351 /* LoginViewController.swift */; };
+		66BBD30B1F63CF3C00AF1351 /* QuizInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BBD30A1F63CF3C00AF1351 /* QuizInfoViewController.swift */; };
+		66ECE93D1F655678005F9AE2 /* CoursesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ECE93C1F655678005F9AE2 /* CoursesTableViewCell.swift */; };
+		66ECE93F1F655772005F9AE2 /* QuizFromCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ECE93E1F655771005F9AE2 /* QuizFromCourseTableViewController.swift */; };
+		66ECE9431F6561F2005F9AE2 /* QuizzesFromSubjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ECE9421F6561F2005F9AE2 /* QuizzesFromSubjectTableViewController.swift */; };
+		827DEF7827455B4992D00FC2 /* Pods_UniQuiziOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1245ECD7542F7412F5534D83 /* Pods_UniQuiziOSTests.framework */; };
+		AB55C4732EF2FAD3002E86D1 /* Pods_UniQuiziOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F26D70FA480C081D28C6DE01 /* Pods_UniQuiziOSUITests.framework */; };
+		D809D743FF16C3AF89E217B4 /* Pods_UniQuiziOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2966502B51BE1D4936869DC6 /* Pods_UniQuiziOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		663C48AC1F62A4F300D2CD8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 663C488D1F62A4F300D2CD8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 663C48941F62A4F300D2CD8F;
+			remoteInfo = UniQuiziOS;
+		};
+		663C48B71F62A4F300D2CD8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 663C488D1F62A4F300D2CD8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 663C48941F62A4F300D2CD8F;
+			remoteInfo = UniQuiziOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		66636ABC1F649C5B00A481B8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1245ECD7542F7412F5534D83 /* Pods_UniQuiziOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniQuiziOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A6CF060723041FDF0667140 /* Pods-UniQuiziOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniQuiziOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UniQuiziOS/Pods-UniQuiziOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2131F2148CC7D9E5457A9A07 /* Pods-UniQuiziOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniQuiziOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UniQuiziOSUITests/Pods-UniQuiziOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2966502B51BE1D4936869DC6 /* Pods_UniQuiziOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniQuiziOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6616CB491F65398B00AE688C /* CoursesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionViewController.swift; sourceTree = "<group>"; };
+		6616CB4B1F653A1E00AE688C /* CoursesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionViewCell.swift; sourceTree = "<group>"; };
+		6616CB4D1F65520400AE688C /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
+		6631042B1F641AFD000D524F /* FieldCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCollectionViewController.swift; sourceTree = "<group>"; };
+		663C48951F62A4F300D2CD8F /* UniQuiziOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniQuiziOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		663C48981F62A4F300D2CD8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		663C489A1F62A4F300D2CD8F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		663C489C1F62A4F300D2CD8F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		663C489F1F62A4F300D2CD8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		663C48A11F62A4F300D2CD8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		663C48A41F62A4F300D2CD8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		663C48A61F62A4F300D2CD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		663C48AB1F62A4F300D2CD8F /* UniQuiziOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniQuiziOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		663C48AF1F62A4F300D2CD8F /* UniQuiziOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniQuiziOSTests.swift; sourceTree = "<group>"; };
+		663C48B11F62A4F300D2CD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		663C48B61F62A4F300D2CD8F /* UniQuiziOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniQuiziOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		663C48BA1F62A4F300D2CD8F /* UniQuiziOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniQuiziOSUITests.swift; sourceTree = "<group>"; };
+		663C48BC1F62A4F300D2CD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		663C48C81F62A54F00D2CD8F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		663C48CA1F62B5D700D2CD8F /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		663C48CC1F62B61700D2CD8F /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		663C48CF1F62B8B800D2CD8F /* ModelObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelObjects.swift; sourceTree = "<group>"; };
+		663C48D11F62BBEC00D2CD8F /* Properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		66636ABD1F649E7600A481B8 /* Pods_UniQuiziOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_UniQuiziOS.framework; path = "Pods/../build/Debug-iphoneos/Pods_UniQuiziOS.framework"; sourceTree = "<group>"; };
+		66B513EA1F65357C005CAF4C /* FieldCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldCollectionViewCell.swift; sourceTree = "<group>"; };
+		66BBD3061F630A3A00AF1351 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		66BBD3081F639A0500AF1351 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		66BBD30A1F63CF3C00AF1351 /* QuizInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizInfoViewController.swift; sourceTree = "<group>"; };
+		66ECE93C1F655678005F9AE2 /* CoursesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewCell.swift; sourceTree = "<group>"; };
+		66ECE93E1F655771005F9AE2 /* QuizFromCourseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFromCourseTableViewController.swift; sourceTree = "<group>"; };
+		66ECE9421F6561F2005F9AE2 /* QuizzesFromSubjectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesFromSubjectTableViewController.swift; sourceTree = "<group>"; };
+		865CB470B6C9CAE30935271E /* Pods-UniQuiziOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniQuiziOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UniQuiziOSUITests/Pods-UniQuiziOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9D1616CF111244B580CAA9AE /* Pods-UniQuiziOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniQuiziOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UniQuiziOSTests/Pods-UniQuiziOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF4425A6B9B10CA2AD20946C /* Pods-UniQuiziOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniQuiziOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UniQuiziOSTests/Pods-UniQuiziOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		F155072551DA7341523760B9 /* Pods-UniQuiziOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniQuiziOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-UniQuiziOS/Pods-UniQuiziOS.release.xcconfig"; sourceTree = "<group>"; };
+		F26D70FA480C081D28C6DE01 /* Pods_UniQuiziOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniQuiziOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		663C48921F62A4F300D2CD8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66636ABE1F649E7600A481B8 /* Pods_UniQuiziOS.framework in Frameworks */,
+				D809D743FF16C3AF89E217B4 /* Pods_UniQuiziOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663C48A81F62A4F300D2CD8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				827DEF7827455B4992D00FC2 /* Pods_UniQuiziOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663C48B31F62A4F300D2CD8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB55C4732EF2FAD3002E86D1 /* Pods_UniQuiziOSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E8E00E27F35E714A864FB42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A6CF060723041FDF0667140 /* Pods-UniQuiziOS.debug.xcconfig */,
+				F155072551DA7341523760B9 /* Pods-UniQuiziOS.release.xcconfig */,
+				9D1616CF111244B580CAA9AE /* Pods-UniQuiziOSTests.debug.xcconfig */,
+				DF4425A6B9B10CA2AD20946C /* Pods-UniQuiziOSTests.release.xcconfig */,
+				2131F2148CC7D9E5457A9A07 /* Pods-UniQuiziOSUITests.debug.xcconfig */,
+				865CB470B6C9CAE30935271E /* Pods-UniQuiziOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63DBDC22FD877A1AB7AD5240 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2966502B51BE1D4936869DC6 /* Pods_UniQuiziOS.framework */,
+				66636ABD1F649E7600A481B8 /* Pods_UniQuiziOS.framework */,
+				1245ECD7542F7412F5534D83 /* Pods_UniQuiziOSTests.framework */,
+				F26D70FA480C081D28C6DE01 /* Pods_UniQuiziOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		663C488C1F62A4F300D2CD8F = {
+			isa = PBXGroup;
+			children = (
+				663C48971F62A4F300D2CD8F /* UniQuiziOS */,
+				663C48AE1F62A4F300D2CD8F /* UniQuiziOSTests */,
+				663C48B91F62A4F300D2CD8F /* UniQuiziOSUITests */,
+				663C48961F62A4F300D2CD8F /* Products */,
+				0E8E00E27F35E714A864FB42 /* Pods */,
+				63DBDC22FD877A1AB7AD5240 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		663C48961F62A4F300D2CD8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				663C48951F62A4F300D2CD8F /* UniQuiziOS.app */,
+				663C48AB1F62A4F300D2CD8F /* UniQuiziOSTests.xctest */,
+				663C48B61F62A4F300D2CD8F /* UniQuiziOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		663C48971F62A4F300D2CD8F /* UniQuiziOS */ = {
+			isa = PBXGroup;
+			children = (
+				663C48CE1F62B8A300D2CD8F /* Model */,
+				663C48981F62A4F300D2CD8F /* AppDelegate.swift */,
+				663C489A1F62A4F300D2CD8F /* FirstViewController.swift */,
+				663C489C1F62A4F300D2CD8F /* SecondViewController.swift */,
+				663C489E1F62A4F300D2CD8F /* Main.storyboard */,
+				663C48A11F62A4F300D2CD8F /* Assets.xcassets */,
+				663C48A31F62A4F300D2CD8F /* LaunchScreen.storyboard */,
+				663C48A61F62A4F300D2CD8F /* Info.plist */,
+				663C48C81F62A54F00D2CD8F /* HomeViewController.swift */,
+				663C48CA1F62B5D700D2CD8F /* SearchTableViewController.swift */,
+				663C48CC1F62B61700D2CD8F /* SearchTableViewCell.swift */,
+				663C48D11F62BBEC00D2CD8F /* Properties.swift */,
+				66BBD3061F630A3A00AF1351 /* QuizViewController.swift */,
+				66BBD3081F639A0500AF1351 /* LoginViewController.swift */,
+				66BBD30A1F63CF3C00AF1351 /* QuizInfoViewController.swift */,
+				6631042B1F641AFD000D524F /* FieldCollectionViewController.swift */,
+				66B513EA1F65357C005CAF4C /* FieldCollectionViewCell.swift */,
+				6616CB491F65398B00AE688C /* CoursesCollectionViewController.swift */,
+				6616CB4B1F653A1E00AE688C /* CoursesCollectionViewCell.swift */,
+				6616CB4D1F65520400AE688C /* CoursesTableViewController.swift */,
+				66ECE93C1F655678005F9AE2 /* CoursesTableViewCell.swift */,
+				66ECE93E1F655771005F9AE2 /* QuizFromCourseTableViewController.swift */,
+				66ECE9421F6561F2005F9AE2 /* QuizzesFromSubjectTableViewController.swift */,
+			);
+			path = UniQuiziOS;
+			sourceTree = "<group>";
+		};
+		663C48AE1F62A4F300D2CD8F /* UniQuiziOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				663C48AF1F62A4F300D2CD8F /* UniQuiziOSTests.swift */,
+				663C48B11F62A4F300D2CD8F /* Info.plist */,
+			);
+			path = UniQuiziOSTests;
+			sourceTree = "<group>";
+		};
+		663C48B91F62A4F300D2CD8F /* UniQuiziOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				663C48BA1F62A4F300D2CD8F /* UniQuiziOSUITests.swift */,
+				663C48BC1F62A4F300D2CD8F /* Info.plist */,
+			);
+			path = UniQuiziOSUITests;
+			sourceTree = "<group>";
+		};
+		663C48CE1F62B8A300D2CD8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				663C48CF1F62B8B800D2CD8F /* ModelObjects.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		663C48941F62A4F300D2CD8F /* UniQuiziOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 663C48BF1F62A4F300D2CD8F /* Build configuration list for PBXNativeTarget "UniQuiziOS" */;
+			buildPhases = (
+				066356026E92CA6114E306F4 /* [CP] Check Pods Manifest.lock */,
+				663C48911F62A4F300D2CD8F /* Sources */,
+				663C48921F62A4F300D2CD8F /* Frameworks */,
+				663C48931F62A4F300D2CD8F /* Resources */,
+				83793F5A785C091DCE4F3C75 /* [CP] Embed Pods Frameworks */,
+				5FBDCFBA9E860D2267B94010 /* [CP] Copy Pods Resources */,
+				66636ABC1F649C5B00A481B8 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UniQuiziOS;
+			productName = UniQuiziOS;
+			productReference = 663C48951F62A4F300D2CD8F /* UniQuiziOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		663C48AA1F62A4F300D2CD8F /* UniQuiziOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 663C48C21F62A4F300D2CD8F /* Build configuration list for PBXNativeTarget "UniQuiziOSTests" */;
+			buildPhases = (
+				2468531C117D1FFEC9E288E9 /* [CP] Check Pods Manifest.lock */,
+				663C48A71F62A4F300D2CD8F /* Sources */,
+				663C48A81F62A4F300D2CD8F /* Frameworks */,
+				663C48A91F62A4F300D2CD8F /* Resources */,
+				965168C0B8FE9D24AE162A33 /* [CP] Embed Pods Frameworks */,
+				419486BF20239A488CD5988C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				663C48AD1F62A4F300D2CD8F /* PBXTargetDependency */,
+			);
+			name = UniQuiziOSTests;
+			productName = UniQuiziOSTests;
+			productReference = 663C48AB1F62A4F300D2CD8F /* UniQuiziOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		663C48B51F62A4F300D2CD8F /* UniQuiziOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 663C48C51F62A4F300D2CD8F /* Build configuration list for PBXNativeTarget "UniQuiziOSUITests" */;
+			buildPhases = (
+				67CE481D3308FEE63F15B334 /* [CP] Check Pods Manifest.lock */,
+				663C48B21F62A4F300D2CD8F /* Sources */,
+				663C48B31F62A4F300D2CD8F /* Frameworks */,
+				663C48B41F62A4F300D2CD8F /* Resources */,
+				1A18E74E57E7800A5C50DB63 /* [CP] Embed Pods Frameworks */,
+				0C816A6230D2867E1DF2B767 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				663C48B81F62A4F300D2CD8F /* PBXTargetDependency */,
+			);
+			name = UniQuiziOSUITests;
+			productName = UniQuiziOSUITests;
+			productReference = 663C48B61F62A4F300D2CD8F /* UniQuiziOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		663C488D1F62A4F300D2CD8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Phoenix;
+				TargetAttributes = {
+					663C48941F62A4F300D2CD8F = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					663C48AA1F62A4F300D2CD8F = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 663C48941F62A4F300D2CD8F;
+					};
+					663C48B51F62A4F300D2CD8F = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 663C48941F62A4F300D2CD8F;
+					};
+				};
+			};
+			buildConfigurationList = 663C48901F62A4F300D2CD8F /* Build configuration list for PBXProject "UniQuiziOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 663C488C1F62A4F300D2CD8F;
+			productRefGroup = 663C48961F62A4F300D2CD8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				663C48941F62A4F300D2CD8F /* UniQuiziOS */,
+				663C48AA1F62A4F300D2CD8F /* UniQuiziOSTests */,
+				663C48B51F62A4F300D2CD8F /* UniQuiziOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		663C48931F62A4F300D2CD8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				663C48A51F62A4F300D2CD8F /* LaunchScreen.storyboard in Resources */,
+				663C48A21F62A4F300D2CD8F /* Assets.xcassets in Resources */,
+				663C48A01F62A4F300D2CD8F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663C48A91F62A4F300D2CD8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663C48B41F62A4F300D2CD8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		066356026E92CA6114E306F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UniQuiziOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0C816A6230D2867E1DF2B767 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniQuiziOSUITests/Pods-UniQuiziOSUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A18E74E57E7800A5C50DB63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniQuiziOSUITests/Pods-UniQuiziOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2468531C117D1FFEC9E288E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UniQuiziOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		419486BF20239A488CD5988C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniQuiziOSTests/Pods-UniQuiziOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FBDCFBA9E860D2267B94010 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniQuiziOS/Pods-UniQuiziOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67CE481D3308FEE63F15B334 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UniQuiziOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83793F5A785C091DCE4F3C75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UniQuiziOS/Pods-UniQuiziOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ASPCircleChart/ASPCircleChart.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ASPCircleChart.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniQuiziOS/Pods-UniQuiziOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		965168C0B8FE9D24AE162A33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UniQuiziOSTests/Pods-UniQuiziOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		663C48911F62A4F300D2CD8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66ECE9431F6561F2005F9AE2 /* QuizzesFromSubjectTableViewController.swift in Sources */,
+				663C48D21F62BBEC00D2CD8F /* Properties.swift in Sources */,
+				66ECE93D1F655678005F9AE2 /* CoursesTableViewCell.swift in Sources */,
+				6631042C1F641AFD000D524F /* FieldCollectionViewController.swift in Sources */,
+				663C48D01F62B8B800D2CD8F /* ModelObjects.swift in Sources */,
+				663C489D1F62A4F300D2CD8F /* SecondViewController.swift in Sources */,
+				66B513EB1F65357C005CAF4C /* FieldCollectionViewCell.swift in Sources */,
+				663C48991F62A4F300D2CD8F /* AppDelegate.swift in Sources */,
+				6616CB4C1F653A1E00AE688C /* CoursesCollectionViewCell.swift in Sources */,
+				663C48CB1F62B5D700D2CD8F /* SearchTableViewController.swift in Sources */,
+				66BBD30B1F63CF3C00AF1351 /* QuizInfoViewController.swift in Sources */,
+				663C48CD1F62B61700D2CD8F /* SearchTableViewCell.swift in Sources */,
+				66BBD3071F630A3A00AF1351 /* QuizViewController.swift in Sources */,
+				663C489B1F62A4F300D2CD8F /* FirstViewController.swift in Sources */,
+				6616CB4E1F65520400AE688C /* CoursesTableViewController.swift in Sources */,
+				66BBD3091F639A0500AF1351 /* LoginViewController.swift in Sources */,
+				663C48C91F62A54F00D2CD8F /* HomeViewController.swift in Sources */,
+				6616CB4A1F65398B00AE688C /* CoursesCollectionViewController.swift in Sources */,
+				66ECE93F1F655772005F9AE2 /* QuizFromCourseTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663C48A71F62A4F300D2CD8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				663C48B01F62A4F300D2CD8F /* UniQuiziOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		663C48B21F62A4F300D2CD8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				663C48BB1F62A4F300D2CD8F /* UniQuiziOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		663C48AD1F62A4F300D2CD8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 663C48941F62A4F300D2CD8F /* UniQuiziOS */;
+			targetProxy = 663C48AC1F62A4F300D2CD8F /* PBXContainerItemProxy */;
+		};
+		663C48B81F62A4F300D2CD8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 663C48941F62A4F300D2CD8F /* UniQuiziOS */;
+			targetProxy = 663C48B71F62A4F300D2CD8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		663C489E1F62A4F300D2CD8F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				663C489F1F62A4F300D2CD8F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		663C48A31F62A4F300D2CD8F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				663C48A41F62A4F300D2CD8F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		663C48BD1F62A4F300D2CD8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		663C48BE1F62A4F300D2CD8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		663C48C01F62A4F300D2CD8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A6CF060723041FDF0667140 /* Pods-UniQuiziOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KU35E69LE7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = UniQuiziOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phoenix.UniQuiziOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		663C48C11F62A4F300D2CD8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F155072551DA7341523760B9 /* Pods-UniQuiziOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KU35E69LE7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = UniQuiziOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phoenix.UniQuiziOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		663C48C31F62A4F300D2CD8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1616CF111244B580CAA9AE /* Pods-UniQuiziOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UniQuiziOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phoenix.UniQuiziOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UniQuiziOS.app/UniQuiziOS";
+			};
+			name = Debug;
+		};
+		663C48C41F62A4F300D2CD8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF4425A6B9B10CA2AD20946C /* Pods-UniQuiziOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UniQuiziOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phoenix.UniQuiziOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UniQuiziOS.app/UniQuiziOS";
+			};
+			name = Release;
+		};
+		663C48C61F62A4F300D2CD8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2131F2148CC7D9E5457A9A07 /* Pods-UniQuiziOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = UniQuiziOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phoenix.UniQuiziOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UniQuiziOS;
+			};
+			name = Debug;
+		};
+		663C48C71F62A4F300D2CD8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 865CB470B6C9CAE30935271E /* Pods-UniQuiziOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = UniQuiziOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = phoenix.UniQuiziOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UniQuiziOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		663C48901F62A4F300D2CD8F /* Build configuration list for PBXProject "UniQuiziOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				663C48BD1F62A4F300D2CD8F /* Debug */,
+				663C48BE1F62A4F300D2CD8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		663C48BF1F62A4F300D2CD8F /* Build configuration list for PBXNativeTarget "UniQuiziOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				663C48C01F62A4F300D2CD8F /* Debug */,
+				663C48C11F62A4F300D2CD8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		663C48C21F62A4F300D2CD8F /* Build configuration list for PBXNativeTarget "UniQuiziOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				663C48C31F62A4F300D2CD8F /* Debug */,
+				663C48C41F62A4F300D2CD8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		663C48C51F62A4F300D2CD8F /* Build configuration list for PBXNativeTarget "UniQuiziOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				663C48C61F62A4F300D2CD8F /* Debug */,
+				663C48C71F62A4F300D2CD8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 663C488D1F62A4F300D2CD8F /* Project object */;
+}
