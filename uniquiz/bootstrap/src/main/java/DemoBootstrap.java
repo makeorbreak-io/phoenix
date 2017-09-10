@@ -1,4 +1,5 @@
 import model.*;
+import org.eclipse.persistence.jpa.jpql.parser.QualifiedIdentificationVariableBNF;
 import repositories.*;
 
 import java.util.ArrayList;
@@ -89,12 +90,14 @@ public class DemoBootstrap {
         Subject subject3 = new Subject("Grafos");
         Subject subject4 = new Subject("Design de Software");
         Subject subject5 = new Subject("Princípios da Computação");
+        Subject subject6 = new Subject("Redes de Computadores");
 
         subject1 = subjectRepository.save(subject1);
         subject2 = subjectRepository.save(subject2);
         subject3 = subjectRepository.save(subject3);
         subject4 = subjectRepository.save(subject4);
         subject5 = subjectRepository.save(subject5);
+        subject6 = subjectRepository.save(subject6);
 
 
         //CREATE QUIZZES
@@ -127,8 +130,90 @@ public class DemoBootstrap {
         question2.setAnswers(answerList2);
         questionList.add(question2);
 
+        Question question3 = new Question("Num computador o barramento é partilhado entre o CPU e os dispositivos de entrada e saída (I/O):");
+
+        List<Answer> answerList3 = new LinkedList<>();
+        answerList3.add(new Answer("A ligação entre o CPU e os dispositivos de entrada e saída é feita exclusivamente pelo barramento de dados.", false));
+        answerList3.add(new Answer("A ligação entre o CPU e os dispositivos de entrada e saída é feita exclusivamente pelas linhas de interrupção.", false));
+        answerList3.add(new Answer("A ligação entre o CPU e dos dispositivos de entrada e saída é feita pelo barramento de dados e por uma ou mais linhas de interrupção.", true));
+        answerList3.add(new Answer("Nenhuma das anteriores.", false));
+
+        question3.setAnswers(answerList3);
+        questionList.add(question3);
+
+        Question question4 = new Question("Um dos objetivos da paginação de memória é:");
+
+        List<Answer> answerList4 = new LinkedList<>();
+        answerList4.add(new Answer("Permitir a utilização de endereços físicos contíguos.", false));
+        answerList4.add(new Answer("Permitir os acessos aos periféricos.", false));
+        answerList4.add(new Answer("Permitir a utilização de espaços de memória não contíguos.", true));
+        answerList4.add(new Answer("Aumentar a performance do sistema.", false));
+
+        question4.setAnswers(answerList4);
+        questionList.add(question4);
+
+        Question question5 = new Question("Para que ocorra um deadlock entre processos é necessário:");
+
+        List<Answer> answerList5 = new LinkedList<>();
+        answerList5.add(new Answer("Exclusão mútua, posse e espera, preempção dos recursos, ausência de espera circular", false));
+        answerList5.add(new Answer("Ausência de exclusão mútua, posse e espera, preempção dos recursos, espera circular", false));
+        answerList5.add(new Answer("Exclusão mútua, ausência de posse e espera, preempção dos recursos, espera circular", false));
+        answerList5.add(new Answer("Exclusão mútua, posse e espera, ausência de preempção dos recursos, espera circular", true));
+
+        question5.setAnswers(answerList5);
+        questionList.add(question5);
+
         quiz.setQuestions(questionList);
 
         quizRepository.save(quiz);
+
+        Quiz quiz2 = new Quiz(Difficulty.HARD, subject6.getPk(), subject6.getSubjectName(),
+                course1.getPk(), course1.getCourseName(), "Redes de computadores");
+
+        questionList.clear();
+
+        question1 = new Question("Numa \"routing table\" o \"next hop\" pode ser um enderenço pertencente a uma rede remota");
+        answerList1.clear();
+        answerList1.add(new Answer("Verdadeiro", false));
+        answerList1.add(new Answer("Falso", true));
+
+        question1.setAnswers(answerList1);
+        questionList.add(question1);
+
+        question2 = new Question("A mesma versão do protocolo ICMP é usada com IPv4 e IPv6");
+        answerList2.clear();
+        answerList2.add(new Answer("Verdadeiro", false));
+        answerList2.add(new Answer("Falso", true));
+
+        question2.setAnswers(answerList2);
+        questionList.add(question2);
+
+        question3 = new Question("O mecanismo Path Maximum Transmission Unit Discovery evita a fragmentação de datagramas IPv4");
+        answerList3.clear();
+        answerList3.add(new Answer("Verdadeiro", true));
+        answerList3.add(new Answer("Falso", false));
+
+        question3.setAnswers(answerList3);
+        questionList.add(question3);
+
+        question4 = new Question("Quando uma aplicação recebe um datagrama UDP fica a saber o número de porto de origem e endereço IP de origem");
+        answerList4.clear();
+        answerList4.add(new Answer("Verdadeiro", true));
+        answerList4.add(new Answer("Falso", false));
+
+        question4.setAnswers(answerList4);
+        questionList.add(question4);
+
+        question5 = new Question("Numa ligação DSL é utilizado um par de fibras óticas para transimitir sinais digitais em \"full-duplex\"");
+        answerList5.clear();
+        answerList5.add(new Answer("Verdadeiro", false));
+        answerList5.add(new Answer("Falso", false));
+
+        question5.setAnswers(answerList5);
+        questionList.add(question5);
+
+        quiz2.setQuestions(questionList);
+
+        quizRepository.save(quiz2);
     }
 }
