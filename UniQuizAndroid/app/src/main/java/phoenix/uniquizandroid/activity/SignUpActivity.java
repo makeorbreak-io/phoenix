@@ -111,7 +111,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             RestProperties webProperties = new RestProperties(SignUpActivity.this);
             final UriComponents uri = UriComponentsBuilder.newInstance().scheme(webProperties.getScheme())
-                    .host(webProperties.getHost()).port(webProperties.getPort())
+                    .host(webProperties.getHost())
                     .path(webProperties.getAppBaseUri() +"/" + webProperties.getSignUpUri())
                     .build();
 

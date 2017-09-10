@@ -113,6 +113,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         til.setHintAnimationEnabled(false);
         til = (TextInputLayout) findViewById(R.id.til_username);
         til.setHintAnimationEnabled(false);
+
+        Button signup = (Button) findViewById(R.id.register_button);
+        signup.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this.getBaseContext(), SignUpActivity.class));
+                finish();
+            }
+        });
     }
 
     private void populateAutoComplete() {
