@@ -29,11 +29,23 @@ public class DemoBootstrap {
         Field field2 = new Field("Ciências");
         Field field3 = new Field("Medicina");
         Field field4 = new Field("Economia");
+        Field field5 = new Field("Agricultura");
+        Field field6 = new Field("Artes");
+        Field field7 = new Field("Educação");
+        Field field8 = new Field("Direito");
+        Field field9 = new Field("Humanidades");
+        Field field10 = new Field("Desporto");
 
         field1 = fieldRepository.save(field1);
         field2 = fieldRepository.save(field2);
         field3 = fieldRepository.save(field3);
         field4 = fieldRepository.save(field4);
+        field5 = fieldRepository.save(field5);
+        field6 = fieldRepository.save(field6);
+        field7 = fieldRepository.save(field7);
+        field8 = fieldRepository.save(field8);
+        field9 = fieldRepository.save(field9);
+        field10 = fieldRepository.save(field10);
 
 
         //CREATE COURSE
