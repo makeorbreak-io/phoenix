@@ -207,7 +207,7 @@ public class DemoBootstrap {
         question5 = new Question("Numa ligação DSL é utilizado um par de fibras óticas para transimitir sinais digitais em \"full-duplex\"");
         answerList5.clear();
         answerList5.add(new Answer("Verdadeiro", false));
-        answerList5.add(new Answer("Falso", false));
+        answerList5.add(new Answer("Falso", true));
 
         question5.setAnswers(answerList5);
         questionList.add(question5);
