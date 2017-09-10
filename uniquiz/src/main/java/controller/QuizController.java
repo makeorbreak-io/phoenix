@@ -4,7 +4,6 @@ import dto.QuizDTO;
 import model.Quiz;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import repositories.QuizRepository;
@@ -22,15 +21,19 @@ import java.util.NoSuchElementException;
 public class QuizController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<QuizDTO>> findAll(){
+    public ResponseEntity<List<QuizDTO>> findAll(@RequestParam(required=false) Long subjectPk){
         QuizRepository repo = new QuizRepository();
-
         List<QuizDTO> quizList = new LinkedList<>();
-        for(Quiz quiz : repo.findAll()){
-            quizList.add(quiz.toDTO());
-        }
-        return new ResponseEntity<>(quizList, HttpStatus.OK);
 
+        if(subjectPk != null){
+            for(Quiz quiz : repo.findBySubject(subjectPk)){
+                quizList.add(quiz.toDTO());
+            }
+        }else{
+            for(Quiz quiz : repo.findAll()){
+                quizList.add(quiz.toDTO());
+            }}
+        return new ResponseEntity<>(quizList, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{quizPk}")
