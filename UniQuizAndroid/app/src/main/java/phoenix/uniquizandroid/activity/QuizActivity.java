@@ -52,6 +52,8 @@ public class QuizActivity extends AppCompatActivity {
     private Button answer2Button;
     private Button answer3Button;
     private Button answer4Button;
+    private ImageButton nextQuestion;
+    private ImageButton previousQuestion;
 
 
     @Override
@@ -107,23 +109,17 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        final ImageButton nextQuestion = (ImageButton) findViewById(R.id.next_question_button);
-        final ImageButton previousQuestion = (ImageButton) findViewById(R.id.previous_question_button);
+        nextQuestion = (ImageButton) findViewById(R.id.next_question_button);
+        previousQuestion = (ImageButton) findViewById(R.id.previous_question_button);
 
         nextQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (questionsListPos < questions.size() - 1) {
                     nextQuestion();
-                    if (questionsListPos == questions.size() - 1) {
-                        nextQuestion.setClickable(false);
-                        nextQuestion.setVisibility(View.INVISIBLE);
-                    }
+                    refreshNextButton();
                 }
-                if (questionsListPos == 1) {
-                    previousQuestion.setClickable(true);
-                    previousQuestion.setVisibility(View.VISIBLE);
-                }
+
 
             }
 
@@ -134,14 +130,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(questionsListPos > 0) {
                     previousQuestion();
-                    if (questionsListPos == 0) {
-                        previousQuestion.setClickable(false);
-                        previousQuestion.setVisibility(View.INVISIBLE);
-                    }
-                    if (questionsListPos == questions.size() - 2) {
-                        nextQuestion.setClickable(true);
-                        nextQuestion.setVisibility(View.VISIBLE);
-                    }
+                    refreshPreviousButton();
                 }
             }
         });
@@ -157,7 +146,27 @@ public class QuizActivity extends AppCompatActivity {
         previousQuestion.setVisibility(View.INVISIBLE );
         refreshQuestion();
     }
+    private void refreshPreviousButton(){
+        if (questionsListPos == 0) {
+            previousQuestion.setClickable(false);
+            previousQuestion.setVisibility(View.INVISIBLE);
+        }
+        if (questionsListPos == questions.size() - 2) {
+            nextQuestion.setClickable(true);
+            nextQuestion.setVisibility(View.VISIBLE);
+        }
+    }
 
+    private void refreshNextButton(){
+        if (questionsListPos == questions.size() - 1) {
+            nextQuestion.setClickable(false);
+            nextQuestion.setVisibility(View.INVISIBLE);
+        }
+        if (questionsListPos == 1) {
+            previousQuestion.setClickable(true);
+            previousQuestion.setVisibility(View.VISIBLE);
+        }
+    }
     private void refreshQuestion(){
         TextView questionCountView = (TextView) findViewById(R.id.question_count_view);
         questionCountView.setText(String.valueOf(questionCount)+ " OF " +String.valueOf(questions.size()));
@@ -320,6 +329,8 @@ public class QuizActivity extends AppCompatActivity {
         answer4Button.setClickable(false);
         questionCount = 1;
         questionsListPos = 0;
+        refreshNextButton();
+        refreshPreviousButton();
         refreshQuestion();
     }
 

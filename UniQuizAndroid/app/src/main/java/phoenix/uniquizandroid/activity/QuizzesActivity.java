@@ -46,7 +46,7 @@ public class QuizzesActivity extends AppCompatActivity {
 
             RestProperties webProperties = new RestProperties(QuizzesActivity.this);
             final UriComponents uri;
-            if(subject == null){
+            if(subject != null){
                 uri = UriComponentsBuilder.newInstance().scheme(webProperties.getScheme())
                         .host(webProperties.getHost())
                         .path(webProperties.getAppBaseUri()

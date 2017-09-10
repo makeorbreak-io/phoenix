@@ -2,6 +2,9 @@
 <resources>
     <color name="colorPrimary">#00afea</color>
     <color name="colorPrimaryDark">#009ace</color>
-    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorAccent">#494949</color>
+    <color name="colorAccent2">#FFFFFF</color>
+    <color name="colorWrongAnswer">#fb4141</color>
+    <color name="colroRightAnswer">#8bc34a</color>
     <color name="colorBackground">#F0F0F0</color>
 </resources>

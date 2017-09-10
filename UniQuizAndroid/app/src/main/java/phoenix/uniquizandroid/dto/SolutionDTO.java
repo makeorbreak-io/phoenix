@@ -12,6 +12,10 @@ public class SolutionDTO {
     private byte rightAnswers;
     private byte wrongAnswers;
 
+    public SolutionDTO(){
+
+    }
+
     public SolutionDTO(Long pk, Long quizPk, String email,
                         byte rightAnswers, byte wrongAnswers){
         this.setPk(pk);
