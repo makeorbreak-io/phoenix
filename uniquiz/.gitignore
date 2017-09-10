@@ -17,4 +17,6 @@ core/target/classes/model/User$Roles.class
 core/target/generated-sources/
 src/main/resources/
 src/test/
+db/
+db/*
 target/classes/controller/
