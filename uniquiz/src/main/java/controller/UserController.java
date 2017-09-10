@@ -57,6 +57,8 @@ public class UserController {
 
         }catch (DataIntegrityViolationException e){
             return new ResponseEntity<>(HttpStatus.CONFLICT);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 

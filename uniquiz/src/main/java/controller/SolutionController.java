@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import repositories.SolutionRepository;
+import services.QuizzesPopularityService;
 import services.StatisticsService;
 
 import javax.persistence.NoResultException;
@@ -78,7 +79,8 @@ public class SolutionController {
 
             solution = repo.save(solution);
 
-            new StatisticsService().recalculateUserStatistics(solution);
+            StatisticsService.recalculateUserStatistics(solution);
+            QuizzesPopularityService.incrementPopularity(solution);
 
             return new ResponseEntity<>(solution.toDTO(), HttpStatus.CREATED);
 

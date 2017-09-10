@@ -1,12 +1,15 @@
 package controller;
 
 import dto.CourseDTO;
+import dto.QuizDTO;
 import model.Course;
+import model.Quiz;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import repositories.CourseRepository;
+import repositories.QuizRepository;
 
 import javax.persistence.NoResultException;
 import java.util.LinkedList;
@@ -21,14 +24,28 @@ import java.util.NoSuchElementException;
 public class CourseController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<CourseDTO>> findAll(){
-        CourseRepository repo = new CourseRepository();
+    public ResponseEntity<List<CourseDTO>> findAll(@RequestParam(required=false) Long fieldPk){
+        try {
+            CourseRepository repo = new CourseRepository();
 
-        List<CourseDTO> courseList = new LinkedList<>();
-        for(Course course : repo.findAll()){
-            courseList.add(course.toDTO());
+            List<CourseDTO> courses = new LinkedList<>();
+
+            if (fieldPk != null) {
+                for (Course course : repo.findByField(fieldPk)) {
+                    courses.add(course.toDTO());
+                }
+            } else {
+                for (Course course : repo.findAll()) {
+                    courses.add(course.toDTO());
+                }
+            }
+
+            return new ResponseEntity<>(courses, HttpStatus.OK);
+        }catch (NoResultException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }catch (NoSuchElementException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(courseList, HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{coursePk}")
@@ -45,6 +62,7 @@ public class CourseController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<CourseDTO> add(@RequestBody Course course) {
