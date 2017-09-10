@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -67,6 +68,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+        TextView title = (TextView) findViewById(R.id.title);
+        Typeface face=Typeface.createFromAsset(getAssets(),"fonts/giz.ttf");
+        title.setTypeface(face );
         mEmailView = (AutoCompleteTextView) findViewById(R.id.username);
         populateAutoComplete();
 

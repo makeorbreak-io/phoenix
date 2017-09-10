@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Uniquiz"
-            android:fontFamily="sans-serif-smallcaps"
             android:textSize="64dp"
             android:textAlignment="center"
             android:id="@+id/title"

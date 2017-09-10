@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import phoenix.uniquizandroid.R;
 import phoenix.uniquizandroid.activity.QuizActivity;
+import phoenix.uniquizandroid.activity.QuizPreviewActivity;
 import phoenix.uniquizandroid.dto.QuizDTO;
 import phoenix.uniquizandroid.dto.SimplifiedQuizDTO;
 
@@ -43,7 +44,7 @@ public class ExploreQuizAdapter extends RecyclerView.Adapter<ExploreQuizAdapter.
         holder.position = position;
         holder.quizName.setText(quiz.getTitle());
         holder.quizDifficulty.setText(quiz.getDifficulty());
-        holder.extras = new Intent(mContext, QuizActivity.class);
+        holder.extras = new Intent(mContext, QuizPreviewActivity.class);
         holder.extras.putExtra("quiz", quiz);
 
     }
