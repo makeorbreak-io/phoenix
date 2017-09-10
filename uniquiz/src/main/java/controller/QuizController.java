@@ -21,7 +21,8 @@ import java.util.NoSuchElementException;
 public class QuizController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<QuizDTO>> findAll(@RequestParam(required=false) Long subjectPk){
+    public ResponseEntity<List<QuizDTO>> findAll(@RequestParam(required=false) Long subjectPk,
+                                                    @RequestParam(required = false) Long coursePk){
         QuizRepository repo = new QuizRepository();
         List<QuizDTO> quizList = new LinkedList<>();
 
@@ -29,10 +30,15 @@ public class QuizController {
             for(Quiz quiz : repo.findBySubject(subjectPk)){
                 quizList.add(quiz.toDTO());
             }
-        }else{
+        }else if(subjectPk == null && coursePk == null){
             for(Quiz quiz : repo.findAll()){
                 quizList.add(quiz.toDTO());
-            }}
+            }
+        }else if(coursePk != null){
+            for(Quiz quiz : repo.findByCourse(coursePk)){
+                quizList.add(quiz.toDTO());
+            }
+        }
         return new ResponseEntity<>(quizList, HttpStatus.OK);
     }
 

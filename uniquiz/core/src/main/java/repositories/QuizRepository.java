@@ -22,4 +22,10 @@ public class QuizRepository extends BaseRepository<Quiz, Long> {
         m.put("a", subjectPk);
         return match("e.subjectPk=:a", m);
     }
+
+    public List<Quiz> findByCourse(Long coursePk){
+        Map<String, Object> m = new HashMap<>();
+        m.put("a", coursePk);
+        return match("e.coursePk=:a", m);
+    }
 }
