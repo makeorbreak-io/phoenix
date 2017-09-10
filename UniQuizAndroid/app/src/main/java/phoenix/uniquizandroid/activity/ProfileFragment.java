@@ -68,13 +68,13 @@ public class ProfileFragment extends Fragment {
         PieChart quizzesChart = (PieChart) rootView.findViewById(R.id.quizzes_chart);
         quizzesChart.setContentDescription("");
         quizzesChart.stopNestedScroll();
-        entries = new ArrayList<>();
-        entries.add(new PieEntry(Float.valueOf(String.valueOf(stats.getTotalQuizzesPassed())), "Approved"));
-        entries.add(new PieEntry(Float.valueOf(String.valueOf(stats.getTotalQuizzesSolved())), "Solved"));
-        set = new PieDataSet(entries, "");
-        set.setColors(ColorTemplate.MATERIAL_COLORS);
+        List<PieEntry> entries2 = new ArrayList<>();
+        entries2.add(new PieEntry(Float.valueOf(String.valueOf(stats.getTotalQuizzesPassed())), "Approved"));
+        entries2.add(new PieEntry(Float.valueOf(String.valueOf(stats.getTotalQuizzesSolved()-stats.getTotalQuizzesPassed())), "Failed"));
+        PieDataSet set2 = new PieDataSet(entries2, "");
+        set2.setColors(ColorTemplate.MATERIAL_COLORS);
         quizzesChart.animateY(2000);
-        data = new PieData(set);
+        data = new PieData(set2);
         quizzesChart.setData(data);
         quizzesChart.invalidate();
 
